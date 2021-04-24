@@ -32,6 +32,7 @@ const Hamburger = styled(RiMenu5Fill)`
   right: 1rem;
   color: darkslategray;
   z-index: 2;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -42,9 +43,9 @@ const Main = styled.div`
   position: absolute;
   top: 0;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: #009fe3;
-
+  transition: ease-in-out;
   @media screen and (min-width: 768px) {
     display: none;
   }

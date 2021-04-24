@@ -8,6 +8,5 @@ export default Workouts;
 
 const Main = styled.div`
   height: 400px;
-  width: 100%;
-  background-color: lightsalmon;
+  background-color: #e8f2f7;
 `;
