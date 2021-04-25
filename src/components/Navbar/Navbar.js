@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import LogoMain from '../../images/hh_logo_main.png';
+import LogoMain from '../../images/logos/hh_logo_main.png';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -7,7 +7,7 @@ const Navbar = () => {
     <Nav>
       <NavContainer>
         <LogoLink to='/'>
-          <Logo src={LogoMain} />
+          <Logo src={LogoMain} alt='Main logo' />
         </LogoLink>
         <ListItems>
           <ListItem primary='true' to='/workouts'>
@@ -27,7 +27,7 @@ const Navbar = () => {
 export default Navbar;
 
 const Nav = styled.nav`
-  height: 320px;
+  /* height: 320px; */
   /* width: 100vw; */
   padding: 2.5rem;
   background-color: #fff;
@@ -35,7 +35,7 @@ const Nav = styled.nav`
 `;
 
 const NavContainer = styled.div`
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   /* max-width: 70%; */
   display: flex;

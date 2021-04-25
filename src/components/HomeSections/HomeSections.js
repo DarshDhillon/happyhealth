@@ -7,7 +7,7 @@ const HomeSections = () => {
       {HomePageData.map((section) => (
         <SectionContainer reverse={section.reverse} key={section.id}>
           <SectionWrapper reverse={section.reverse}>
-            <SectionDescription>
+            <SectionDescription reverse={section.reverse}>
               <h1>{section.title}</h1>
               <p>{section.description}</p>
             </SectionDescription>
@@ -23,7 +23,7 @@ export default HomeSections;
 
 const SectionContainer = styled.section`
   background-color: ${({ reverse }) => (reverse ? '#e8f2f7' : '#f0e9f3')};
-  display: flex;
+  /* display: flex; */
   padding: 2rem;
 `;
 
@@ -49,6 +49,7 @@ const SectionDescription = styled.div`
     font-size: clamp(1.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 1rem;
+    /* text-align: ${({ reverse }) => (reverse ? 'right' : '')}; */
   }
 
   p {
