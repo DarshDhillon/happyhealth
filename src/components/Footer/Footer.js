@@ -155,4 +155,9 @@ const SocialLink = styled(Link)``;
 const SocialIcon = styled.img`
   width: 30px;
   height: 30px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.4);
+  }
 `;

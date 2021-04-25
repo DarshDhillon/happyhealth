@@ -76,7 +76,7 @@ const ListItem = styled(Link)`
   font-weight: 600;
   color: ${({ primary }) => (primary ? '#824998' : '#009fe3')};
   border-bottom: 4px solid #fff;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
 
   &:hover {
     border-bottom: ${({ primary }) =>

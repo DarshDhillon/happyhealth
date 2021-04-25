@@ -46,7 +46,7 @@ const SectionDescription = styled.div`
   /* border: 1px solid blue; */
 
   h1 {
-    font-size: clamp(1.5rem, 5vw, 4rem);
+    font-size: clamp(1.5rem, 5vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
     /* text-align: ${({ reverse }) => (reverse ? 'right' : '')}; */
