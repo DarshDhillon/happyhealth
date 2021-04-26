@@ -16,7 +16,7 @@ const App = () => {
         <DropMenu />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/workouts' exact component={Workouts} />
+          {/* <Route path='/workouts' exact component={Workouts} /> */}
           <Route path='/take5' exact component={Take5} />
         </Switch>
         <Footer />

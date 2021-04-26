@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Quicksand', sans-serif;
 
 }
+
 `;
 
 export default GlobalStyle;

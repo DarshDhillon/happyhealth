@@ -1,21 +1,15 @@
-import { useRef } from 'react';
+import { useContext } from 'react';
 import styled from 'styled-components';
 import BeachImage from '../../images/take5/meditate_beach.svg';
 import RainImage from '../../images/take5/meditate_raining.svg';
+import { ModalVideoContext } from '../../context/Take5/ModalVideoProvider';
 
 const Main = () => {
-  const beachImgRef = useRef();
-  const rainImgRef = useRef();
-
-  const handleClick = (e) => {
-    e.target === rainImgRef.current
-      ? console.log('working')
-      : console.log('not working');
-  };
+  const { handleImageClick } = useContext(ModalVideoContext);
 
   return (
     <Container>
-      <Wrapper>
+      <TextWrapper>
         <h1>
           better <span>mind</span>. better <span>you</span>
         </h1>
@@ -28,19 +22,17 @@ const Main = () => {
           enim magni.
         </p>
         <h3>Take5 and relax...</h3>
-      </Wrapper>
+      </TextWrapper>
       <ImageContainer>
         <Image
-          ref={beachImgRef}
           name='beach'
-          onClick={handleClick}
+          onClick={(e) => handleImageClick(e)}
           src={BeachImage}
           alt='beach'
         />
         <Image
-          ref={rainImgRef}
-          name={'rain'}
-          onClick={handleClick}
+          name='rain'
+          onClick={(e) => handleImageClick(e)}
           src={RainImage}
           alt='rain'
         />
@@ -52,23 +44,28 @@ const Main = () => {
 export default Main;
 
 const Container = styled.main`
-  height: 100vh;
+  /* height: 100vh; */
   background: linear-gradient(#e8f2f7, #f0e9f3);
-  padding: 6rem 0;
+  padding: 4rem 0;
+  /* border: 1px solid red; */
 `;
 
-const Wrapper = styled.div`
+const TextWrapper = styled.div`
   /* border: 1px solid red; */
   width: 65%;
   display: flex;
   flex-direction: column;
-  height: 40%;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
 
   h1 {
-    font-size: 4rem;
+    font-size: clamp(3rem, 5vw, 4rem);
+    padding: 1rem;
+
+    @media screen and (max-width: 1100px) {
+      text-align: center;
+    }
 
     span {
       color: #009fe3;
@@ -82,10 +79,12 @@ const Wrapper = styled.div`
   p {
     font-size: 1.3rem;
     text-align: center;
+    padding: 1rem;
   }
 
   h3 {
     font-size: 2rem;
+    padding: 1rem;
   }
 `;
 
@@ -97,14 +96,26 @@ const ImageContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   /* border: 1px solid black; */
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `;
 
 const Image = styled.img`
+  /* border: 1px solid black; */
+
   width: 300px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
   &:hover {
     transform: scale(1.3);
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 250px;
+    margin-top: 1rem;
   }
 `;

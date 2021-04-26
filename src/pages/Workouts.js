@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import Beach from '../videos/BEACH4.mp4';
+import Beach from '../videos/beach.mp4';
 
 const Workouts = () => {
   const videoRef = useRef();
