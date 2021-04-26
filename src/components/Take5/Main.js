@@ -1,8 +1,18 @@
+import { useRef } from 'react';
 import styled from 'styled-components';
 import BeachImage from '../../images/take5/meditate_beach.svg';
 import RainImage from '../../images/take5/meditate_raining.svg';
 
 const Main = () => {
+  const beachImgRef = useRef();
+  const rainImgRef = useRef();
+
+  const handleClick = (e) => {
+    e.target === rainImgRef.current
+      ? console.log('working')
+      : console.log('not working');
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -20,8 +30,20 @@ const Main = () => {
         <h3>Take5 and relax...</h3>
       </Wrapper>
       <ImageContainer>
-        <Image src={BeachImage} alt='beach' />
-        <Image src={RainImage} alt='rain' />
+        <Image
+          ref={beachImgRef}
+          name='beach'
+          onClick={handleClick}
+          src={BeachImage}
+          alt='beach'
+        />
+        <Image
+          ref={rainImgRef}
+          name={'rain'}
+          onClick={handleClick}
+          src={RainImage}
+          alt='rain'
+        />
       </ImageContainer>
     </Container>
   );
@@ -32,7 +54,7 @@ export default Main;
 const Container = styled.main`
   height: 100vh;
   background: linear-gradient(#e8f2f7, #f0e9f3);
-  padding: 4rem 0;
+  padding: 6rem 0;
 `;
 
 const Wrapper = styled.div`
