@@ -7,11 +7,18 @@ import TwitterIcon from '../../images/logos/twitter_icon.jpg';
 import InstaIcon from '../../images/logos/instagram_icon.png';
 
 const Footer = () => {
+  const scrollTopPage = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <FooterContainer>
       <FooterWrapper>
         <FooterLinks>
-          <FooterLink hover='true' to='/workouts'>
+          <FooterLink hover='true' to='/'>
             This does something
           </FooterLink>
           <FooterLink to='/'>I go somwhere</FooterLink>
@@ -19,9 +26,11 @@ const Footer = () => {
             This does something
           </FooterLink>
         </FooterLinks>
-        <FooterLogoLink to='/'>
-          <FooterLogo src={LogoNoText} />
-        </FooterLogoLink>
+        <FooterLogo
+          onClick={scrollTopPage}
+          src={LogoNoText}
+          alt='logo-no-text'
+        />
         <FooterLinks>
           <FooterLink to='/'>This does something</FooterLink>
           <FooterLink hover='true' to='/'>
@@ -33,28 +42,28 @@ const Footer = () => {
       <SocialWrapper>
         <SocialLinks>
           <SocialLink
-            to='www.facebook.com'
+            href='http://www.facebook.com'
             target='_blank'
             rel='noopener noreferrer'
           >
             <SocialIcon src={FBIcon} />
           </SocialLink>
           <SocialLink
-            to='www.youtube.com'
+            href='http://www.youtube.com'
             target='_blank'
             rel='noopener noreferrer'
           >
             <SocialIcon src={YTIcon} />
           </SocialLink>
           <SocialLink
-            to='www.instagram.com'
+            href='http://www.instagram.com'
             target='_blank'
             rel='noopener noreferrer'
           >
             <SocialIcon src={InstaIcon} />
           </SocialLink>
           <SocialLink
-            to='www.twitter.com'
+            href='http://www.twitter.com'
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -115,20 +124,19 @@ const FooterLink = styled(Link)`
   }
 `;
 
-const FooterLogoLink = styled(Link)`
+const FooterLogo = styled.img`
+  width: 80px;
+  cursor: pointer;
+
   @media screen and (max-width: 768px) {
     order: -1;
     margin-bottom: 1rem;
   }
 `;
 
-const FooterLogo = styled.img`
-  width: 80px;
-`;
-
 const Copyright = styled.small`
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 50;
   font-weight: 400;
 `;
@@ -150,7 +158,7 @@ const SocialLinks = styled.div`
   justify-content: space-around;
 `;
 
-const SocialLink = styled(Link)``;
+const SocialLink = styled.a``;
 
 const SocialIcon = styled.img`
   width: 30px;

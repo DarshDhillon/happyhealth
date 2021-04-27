@@ -40,11 +40,12 @@ const Hamburger = styled(RiMenu5Fill)`
 `;
 
 const Main = styled.div`
+  z-index: 998;
   position: absolute;
   top: 0;
   height: 100vh;
   width: 100%;
-  background-color: #009fe3;
+  background: #009fe3;
   transition: ease-in-out;
   @media screen and (min-width: 768px) {
     display: none;

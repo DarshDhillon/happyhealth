@@ -16,7 +16,7 @@ const VideoPlayer = () => {
 
   return (
     <VideoWrapper>
-      <Video ref={videoRef} src={selectedVideo} autoPlay controls />
+      <Video ref={videoRef} src={selectedVideo} autoPlay controls loop />
     </VideoWrapper>
   );
 };
@@ -36,6 +36,7 @@ const VideoWrapper = styled.div`
 `;
 
 const Video = styled.video`
+  border-radius: 2rem;
   height: auto;
   width: 100%;
 `;

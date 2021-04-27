@@ -8,7 +8,12 @@ const HomeSections = () => {
         <SectionContainer reverse={section.reverse} key={section.id}>
           <SectionWrapper reverse={section.reverse}>
             <SectionDescription reverse={section.reverse}>
-              <h1>{section.title}</h1>
+              <h1>
+                {section.title}{' '}
+                <span>
+                  <button>Testing</button>
+                </span>{' '}
+              </h1>
               <p>{section.description}</p>
             </SectionDescription>
             <SectionImage src={section.image} alt={section.alt} />

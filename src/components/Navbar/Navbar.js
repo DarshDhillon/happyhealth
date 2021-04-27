@@ -13,7 +13,7 @@ const Navbar = () => {
           <ListItem primary='true' to='/workouts'>
             workouts
           </ListItem>
-          <ListItem to='/mealtime'>mealtime</ListItem>
+          <ListItem to='/foodie'>foodie</ListItem>
           <ListItem primary='true' to='/take5'>
             take5
           </ListItem>

@@ -1,17 +1,18 @@
-import { useContext } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
-import BeachImage from '../../images/take5/meditate_beach.svg';
-import RainImage from '../../images/take5/meditate_raining.svg';
-import { ModalVideoContext } from '../../context/Take5/ModalVideoProvider';
+import SearchInput from './SearchInput';
+import FoodieMainImg1 from '../../images/foodie/foodie_main1.svg';
+import RecipeCard from './RecipeCard';
 
-const Main = () => {
-  const { handleImageClick } = useContext(ModalVideoContext);
+const FoodieMain = () => {
+  const [show, setShow] = useState(false);
 
   return (
     <Container>
       <TextWrapper>
         <h1>
-          better <span>mind</span>. better <span>you</span>
+          <span>you</span> are what{' '}
+          <span onClick={() => setShow((prev) => !prev)}>you</span> eat
         </h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
@@ -21,27 +22,16 @@ const Main = () => {
           animi praesentium amet alias, hic veritatis ab error quas, laudantium
           enim magni.
         </p>
-        <h3>Take5 and relax...</h3>
       </TextWrapper>
+      <SearchInput />
       <ImageContainer>
-        <Image
-          name='beach'
-          onClick={(e) => handleImageClick(e)}
-          src={BeachImage}
-          alt='beach'
-        />
-        <Image
-          name='rain'
-          onClick={(e) => handleImageClick(e)}
-          src={RainImage}
-          alt='rain'
-        />
+        {show ? <RecipeCard /> : <Image src={FoodieMainImg1} />}
       </ImageContainer>
     </Container>
   );
 };
 
-export default Main;
+export default FoodieMain;
 
 const Container = styled.main`
   /* height: 100vh; */
@@ -62,17 +52,18 @@ const TextWrapper = styled.div`
   h1 {
     font-size: clamp(3rem, 5vw, 4rem);
     padding: 1rem;
+    user-select: none;
 
     @media screen and (max-width: 1100px) {
       text-align: center;
     }
 
     span {
-      color: #009fe3;
+      color: #824998;
     }
 
     span:nth-child(2) {
-      color: #824998;
+      color: #009fe3;
     }
   }
 
@@ -81,16 +72,11 @@ const TextWrapper = styled.div`
     text-align: center;
     padding: 1rem;
   }
-
-  h3 {
-    font-size: 2rem;
-    padding: 1rem;
-  }
 `;
 
 const ImageContainer = styled.div`
   padding: 3rem 0;
-  margin: 0 auto;
+  margin: 2rem auto;
   width: 60%;
   display: flex;
   align-items: center;
@@ -106,13 +92,7 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   /* border: 1px solid black; */
 
-  width: 300px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.3);
-  }
+  width: 400px;
 
   @media screen and (max-width: 768px) {
     width: 250px;
