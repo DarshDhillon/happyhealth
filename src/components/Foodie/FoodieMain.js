@@ -1,16 +1,17 @@
 import { useContext } from 'react';
-import styled from 'styled-components';
-import SearchInput from './SearchInput';
-import FoodieMainImg1 from '../../images/foodie/foodie_main1.svg';
-import RecipeCard from './RecipeCard';
-import FoodLoading from '../../images/foodie/frying_loading.gif';
-import { FoodieContext } from '../../context/Foodie/FoodieProvider';
 import { v4 as uuid } from 'uuid';
+import styled from 'styled-components';
+import FoodieMainImg1 from '../../images/foodie/foodie_main1.svg';
+import FoodLoading from '../../images/foodie/frying_loading.gif';
+import MatchError from '../../images/foodie/error_no_match.svg';
+import RecipeCard from './RecipeCard';
+import SearchInput from './SearchInput';
+import { FoodieContext } from '../../context/Foodie/FoodieProvider';
 
 const FoodieMain = () => {
-  const { apiData } = useContext(FoodieContext);
+  const { fetchedData } = useContext(FoodieContext);
 
-  const { loading, recipes } = apiData;
+  const { loading, recipes, count } = fetchedData;
 
   return (
     <Container>
@@ -39,6 +40,11 @@ const FoodieMain = () => {
         <ImageContainer>
           {loading ? (
             <Image src={FoodLoading} />
+          ) : count !== null ? (
+            <ErrorContainer>
+              <h3>Oops! Please try searching again..</h3>
+              <Image src={MatchError} />
+            </ErrorContainer>
           ) : (
             <Image src={FoodieMainImg1} />
           )}
@@ -51,7 +57,6 @@ const FoodieMain = () => {
 export default FoodieMain;
 
 const Container = styled.main`
-  /* height: 100vh; */
   background: linear-gradient(#e8f2f7, #f0e9f3);
   padding: 4rem 0;
   /* border: 1px solid red; */
@@ -131,5 +136,21 @@ const Image = styled.img`
   @media screen and (max-width: 768px) {
     width: 250px;
     margin-top: 1rem;
+  }
+`;
+
+const ErrorContainer = styled.div`
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #e73636;
+    font-weight: 700;
+    margin-bottom: 2rem;
   }
 `;

@@ -10,6 +10,7 @@ const FoodieProvider = ({ children }) => {
   const initialState = {
     loading: false,
     recipes: [],
+    count: null,
   };
 
   const [state, dispatch] = useReducer(foodieReducer, initialState);
@@ -25,7 +26,7 @@ const FoodieProvider = ({ children }) => {
         )
         .then(({ data }) => {
           console.log(data);
-          dispatch({ type: 'FETCH_DATA', payload: data.hits });
+          dispatch({ type: 'FETCH_DATA', payload: data });
         })
         .catch((error) => console.error(error));
     };
@@ -34,7 +35,7 @@ const FoodieProvider = ({ children }) => {
   };
 
   return (
-    <FoodieContext.Provider value={{ handleFetch, apiData: state }}>
+    <FoodieContext.Provider value={{ handleFetch, fetchedData: state }}>
       {children}
     </FoodieContext.Provider>
   );

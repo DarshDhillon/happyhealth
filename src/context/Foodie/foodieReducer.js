@@ -3,7 +3,12 @@ const foodieReducer = (state, { type, payload }) => {
     case 'IS_LOADING':
       return { ...state, loading: true };
     case 'FETCH_DATA':
-      return { ...state, loading: false, recipes: [...payload] };
+      return {
+        ...state,
+        loading: false,
+        recipes: [...payload.hits],
+        count: payload.count,
+      };
     default:
       return state;
   }
