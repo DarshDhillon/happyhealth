@@ -1,18 +1,21 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import styled from 'styled-components';
 import SearchInput from './SearchInput';
 import FoodieMainImg1 from '../../images/foodie/foodie_main1.svg';
 import RecipeCard from './RecipeCard';
+import FoodLoading from '../../images/foodie/frying_loading.gif';
+import { FoodieContext } from '../../context/Foodie/FoodieProvider';
 
 const FoodieMain = () => {
-  const [show, setShow] = useState(false);
+  const { apiData } = useContext(FoodieContext);
+
+  const { loading } = apiData;
 
   return (
     <Container>
       <TextWrapper>
         <h1>
-          <span>you</span> are what{' '}
-          <span onClick={() => setShow((prev) => !prev)}>you</span> eat
+          <span>you</span> are what <span>you</span> eat
         </h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
@@ -25,7 +28,7 @@ const FoodieMain = () => {
       </TextWrapper>
       <SearchInput />
       <ImageContainer>
-        {show ? <RecipeCard /> : <Image src={FoodieMainImg1} />}
+        {loading ? <Image src={FoodLoading} /> : <Image src={FoodieMainImg1} />}
       </ImageContainer>
     </Container>
   );
@@ -92,7 +95,7 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   /* border: 1px solid black; */
 
-  width: 400px;
+  width: 350px;
 
   @media screen and (max-width: 768px) {
     width: 250px;
