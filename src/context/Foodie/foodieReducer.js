@@ -1,7 +1,9 @@
 const foodieReducer = (state, { type, payload }) => {
   switch (type) {
-    case 'SET_LOADING':
-      return { ...state, recipes: payload, loading: true };
+    case 'IS_LOADING':
+      return { ...state, loading: true };
+    case 'FETCH_DATA':
+      return { ...state, loading: false, recipes: [...payload] };
     default:
       return state;
   }

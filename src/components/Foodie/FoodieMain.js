@@ -5,11 +5,12 @@ import FoodieMainImg1 from '../../images/foodie/foodie_main1.svg';
 import RecipeCard from './RecipeCard';
 import FoodLoading from '../../images/foodie/frying_loading.gif';
 import { FoodieContext } from '../../context/Foodie/FoodieProvider';
+import { v4 as uuid } from 'uuid';
 
 const FoodieMain = () => {
   const { apiData } = useContext(FoodieContext);
 
-  const { loading } = apiData;
+  const { loading, recipes } = apiData;
 
   return (
     <Container>
@@ -27,9 +28,22 @@ const FoodieMain = () => {
         </p>
       </TextWrapper>
       <SearchInput />
-      <ImageContainer>
-        {loading ? <Image src={FoodLoading} /> : <Image src={FoodieMainImg1} />}
-      </ImageContainer>
+
+      {recipes.length > 0 ? (
+        <RecipeImageContainer>
+          {recipes.map((recipe) => (
+            <RecipeCard key={uuid()} recipe={recipe} />
+          ))}
+        </RecipeImageContainer>
+      ) : (
+        <ImageContainer>
+          {loading ? (
+            <Image src={FoodLoading} />
+          ) : (
+            <Image src={FoodieMainImg1} />
+          )}
+        </ImageContainer>
+      )}
     </Container>
   );
 };
@@ -81,6 +95,23 @@ const ImageContainer = styled.div`
   padding: 3rem 0;
   margin: 2rem auto;
   width: 60%;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* border: 1px solid black; */
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+`;
+
+const RecipeImageContainer = styled.div`
+  padding: 3rem 0;
+  margin: 2rem auto;
+  width: 60%;
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   justify-content: space-around;
