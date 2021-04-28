@@ -1,37 +1,13 @@
-import { createContext, useReducer } from 'react';
-import foodieReducer from './foodieReducer';
-import axios from 'axios';
+import { createContext } from 'react';
+import useFoodieSearch from '../../hooks/useFoodieSearch';
+
 export const FoodieContext = createContext();
 
-const ID = process.env.REACT_APP_EDAMAM_APPLICATION_ID;
-const KEY = process.env.REACT_APP_EDAMAN_APPLICATION_KEY;
-
 const FoodieProvider = ({ children }) => {
-  const initialState = {
-    loading: false,
-    recipes: [],
-    count: null,
-  };
-
-  const [state, dispatch] = useReducer(foodieReducer, initialState);
+  const [state, fetchData] = useFoodieSearch();
 
   const handleFetch = (searchQuery) => {
-    dispatch({ type: 'IS_LOADING' });
-
-    const fetchData = async () => {
-      await axios
-        .get(
-          `https://api.edamam.com/search?q=${searchQuery}&app_id=${ID}&app_key=${KEY}
-      `
-        )
-        .then(({ data }) => {
-          console.log(data);
-          dispatch({ type: 'FETCH_DATA', payload: data });
-        })
-        .catch((error) => console.error(error));
-    };
-
-    fetchData();
+    fetchData(searchQuery);
   };
 
   return (
