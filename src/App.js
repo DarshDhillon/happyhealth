@@ -18,8 +18,8 @@ const App = () => {
         <DropMenu />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/foodie' exact component={Foodie} />
-          <Route path='/take5' exact component={Take5} />
+          <Route path='/foodie' component={Foodie} />
+          <Route path='/take5' component={Take5} />
         </Switch>
         <Footer />
       </Router>
