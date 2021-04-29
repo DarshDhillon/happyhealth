@@ -5,11 +5,11 @@ import { FoodieContext } from '../../context/Foodie/FoodieProvider';
 const SearchInput = () => {
   const [inputState, setInputState] = useState('');
   const inputRef = useRef();
-  const { handleFetch } = useContext(FoodieContext);
+  const { fetchData } = useContext(FoodieContext);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    handleFetch(inputState);
+    fetchData(inputState);
     setInputState('');
     inputRef.current.focus();
   };
