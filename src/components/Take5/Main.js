@@ -51,13 +51,16 @@ const Container = styled.main`
 `;
 
 const TextWrapper = styled.div`
-  /* border: 1px solid red; */
   width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+  }
 
   h1 {
     font-size: clamp(3rem, 5vw, 4rem);

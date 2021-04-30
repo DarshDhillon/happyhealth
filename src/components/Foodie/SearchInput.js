@@ -74,6 +74,10 @@ const FoodSearchInput = styled.input`
     font-weight: 400;
     text-align: center;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const SearchButton = styled.button`
