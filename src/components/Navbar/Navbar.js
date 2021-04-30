@@ -74,12 +74,13 @@ const ListItem = styled(Link)`
   font-size: 2rem;
   margin-left: 3.5rem;
   font-weight: 600;
-  color: ${({ primary }) => (primary ? '#824998' : '#009fe3')};
+  color: ${({ primary }) =>
+    primary ? 'var(--mainPurple)' : 'var(--mainBlue)'};
   border-bottom: 4px solid #fff;
   transition: 0.3s ease-in-out;
 
   &:hover {
     border-bottom: ${({ primary }) =>
-      primary ? '4px solid #824998' : '4px solid #009fe3'};
+      primary ? '4px solid var(--mainPurple)' : '4px solid var(--mainBlue)'};
   }
 `;

@@ -54,16 +54,16 @@ const RecipeImageContainer = styled.div`
 
 const CarouselStyles = styled.div`
   .rec.rec-carousel-wrapper .rec-carousel button {
-    background: #009fe3;
+    background: var(--mainBlue);
     color: #fff;
   }
 
   .rec.rec-carousel-wrapper .rec-carousel button:hover {
     background: #fff;
-    color: #009fe3;
+    color: var(--mainBlue);
   }
 
   .rec.rec-carousel-wrapper .rec-pagination .rec.rec-dot.rec.rec-dot_active {
-    background: #824998;
+    background: var(--mainPurple);
   }
 `;

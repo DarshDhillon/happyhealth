@@ -77,18 +77,3 @@ const ErrorContainer = styled.div`
     font-style: italic;
   }
 `;
-
-{
-  /* <ImageContainer>
-{loading ? (
-  <Image src={FoodLoading} />
-) : count !== null ? (
-  <ErrorContainer>
-    <h3>Please try a valid search term..</h3>
-    <Image src={MatchError} />
-  </ErrorContainer>
-) : (
-  <Image src={FoodieMainImg1} />
-)}
-</ImageContainer> */
-}

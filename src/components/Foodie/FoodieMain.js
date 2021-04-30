@@ -59,11 +59,11 @@ const TextWrapper = styled.div`
     }
 
     span {
-      color: #824998;
+      color: var(--mainPurple);
     }
 
     span:nth-child(2) {
-      color: #009fe3;
+      color: var(--mainBlue);
     }
   }
 

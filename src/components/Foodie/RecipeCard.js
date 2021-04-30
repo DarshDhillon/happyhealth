@@ -91,7 +91,7 @@ const Back = styled.div`
 
 const Title = styled.p`
   font-size: 1.5rem;
-  color: #824998;
+  color: var(--mainPurple);
 `;
 const Image = styled.img`
   width: 200px;

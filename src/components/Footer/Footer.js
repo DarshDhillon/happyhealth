@@ -115,7 +115,7 @@ const FooterLink = styled(Link)`
   font-weight: 300;
 
   &:hover {
-    color: ${({ hover }) => (hover ? '#824998' : '#009fe3')};
+    color: ${({ hover }) => (hover ? 'var(--mainPurple)' : 'var(--mainBlue)')};
   }
 
   @media screen and (max-width: 768px) {
