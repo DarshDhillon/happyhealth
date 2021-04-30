@@ -9,6 +9,10 @@ const initialState = {
   loading: false,
   recipes: [],
   count: null,
+  errorData: {
+    isError: false,
+    catchedError: '',
+  },
 };
 
 const useFoodieSearch = () => {
@@ -25,7 +29,10 @@ const useFoodieSearch = () => {
         console.log(data);
         dispatch({ type: 'FETCH_DATA', payload: data });
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        dispatch({ type: 'ERROR', payload: error });
+      });
   };
 
   return [state, fetchData];

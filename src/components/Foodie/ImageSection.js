@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import FoodieMainImg1 from '../../images/foodie/foodie_main1.svg';
 import FoodLoading from '../../images/foodie/frying_loading.gif';
 import MatchError from '../../images/foodie/error_no_match.svg';
+import ErrorBug from '../../images/foodie/error_bug.svg';
 import { FoodieContext } from '../../context/Foodie/FoodieProvider';
 
 const ImageSection = () => {
   const { fetchedData } = useContext(FoodieContext);
 
-  const { loading, count } = fetchedData;
+  const { loading, count, errorData } = fetchedData;
 
   return (
     <ImageContainer>
@@ -16,8 +17,13 @@ const ImageSection = () => {
         <Image src={FoodLoading} />
       ) : count !== null ? (
         <ErrorContainer>
-          <h3>Oops! Please try searching again..</h3>
+          <h3>Please try a valid search term..</h3>
           <Image src={MatchError} />
+        </ErrorContainer>
+      ) : errorData.isError ? (
+        <ErrorContainer>
+          <h3>Oops! Something went wrong..</h3>
+          <Image src={ErrorBug} />
         </ErrorContainer>
       ) : (
         <Image src={FoodieMainImg1} />
@@ -71,3 +77,18 @@ const ErrorContainer = styled.div`
     font-style: italic;
   }
 `;
+
+{
+  /* <ImageContainer>
+{loading ? (
+  <Image src={FoodLoading} />
+) : count !== null ? (
+  <ErrorContainer>
+    <h3>Please try a valid search term..</h3>
+    <Image src={MatchError} />
+  </ErrorContainer>
+) : (
+  <Image src={FoodieMainImg1} />
+)}
+</ImageContainer> */
+}

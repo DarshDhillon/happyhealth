@@ -9,6 +9,15 @@ const foodieReducer = (state, { type, payload }) => {
         recipes: [...payload.hits],
         count: payload.count,
       };
+    case 'ERROR':
+      return {
+        ...state,
+        loading: false,
+        errorData: {
+          isError: true,
+          catchedError: payload,
+        },
+      };
     default:
       return state;
   }

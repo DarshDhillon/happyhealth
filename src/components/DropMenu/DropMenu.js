@@ -10,14 +10,14 @@ const DropMenu = () => {
     <>
       <Hamburger onClick={() => setShowMenu((prev) => !prev)} />
       {showMenu && (
-        <Main>
+        <Dropdown>
           <LinkContainer onClick={() => setShowMenu((prev) => !prev)}>
             <LinkItem to='/workouts'>workouts</LinkItem>
             <LinkItem to='/mealtime'>mealtime</LinkItem>
             <LinkItem to='/take5'>take5</LinkItem>
             <LinkItem to='/shop'>shop</LinkItem>
           </LinkContainer>
-        </Main>
+        </Dropdown>
       )}
     </>
   );
@@ -31,7 +31,7 @@ const Hamburger = styled(RiMenu5Fill)`
   top: 2rem;
   right: 1rem;
   color: darkslategray;
-  z-index: 2;
+  z-index: 999;
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
@@ -39,13 +39,13 @@ const Hamburger = styled(RiMenu5Fill)`
   }
 `;
 
-const Main = styled.div`
+const Dropdown = styled.div`
   z-index: 998;
   position: absolute;
   top: 0;
   height: 100vh;
   width: 100%;
-  background: #009fe3;
+  background: var(--mainBlue);
   transition: ease-in-out;
   @media screen and (min-width: 768px) {
     display: none;
@@ -72,6 +72,6 @@ const LinkItem = styled(Link)`
   transition: 0.3s ease-in-out;
 
   &:hover {
-    color: #824998;
+    color: var(--mainPurple);
   }
 `;

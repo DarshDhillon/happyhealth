@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import FlipImg from '../../images/foodie/flip.png';
+import { v4 as uuid } from 'uuid';
 
 const Recipecard = ({ item }) => {
   const [flip, setFlip] = useState(false);
@@ -19,8 +20,9 @@ const Recipecard = ({ item }) => {
 
       <Back>
         <IngredientsContainer>
+          <h4>INGREDIENTS:</h4>
           {item.recipe.ingredientLines.map((ingredient) => (
-            <p>{ingredient}</p>
+            <p key={uuid()}>{ingredient}</p>
           ))}
         </IngredientsContainer>
       </Back>
@@ -109,6 +111,11 @@ const IngredientsContainer = styled.div`
   padding: 0 2rem;
   overflow-y: scroll;
   /* border: 1px solid blue; */
+
+  h4 {
+    color: var(--mainPurple);
+    margin-bottom: 1.5rem;
+  }
 
   p {
     font-size: 1rem;
