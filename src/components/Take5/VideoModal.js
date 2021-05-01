@@ -7,7 +7,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 const ROOT = document.getElementById('take5-modal-root');
 
 const VideoModal = ({ children }) => {
-  const modalRef = useRef();
+  const modalRef = useRef(null);
   const { showModal, setShowModal } = useContext(ModalVideoContext);
 
   if (!showModal) return null;

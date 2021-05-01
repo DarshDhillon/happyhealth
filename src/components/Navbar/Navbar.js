@@ -56,10 +56,23 @@ const LogoLink = styled(Link)`
 `;
 
 const Logo = styled.img`
+  /* border: 1px solid black; */
   height: 220px;
   width: 220px;
   user-select: none;
-  /* border: 1px solid black; */
+  /* animation: logo-load 1000ms ease-in;
+
+  @keyframes logo-load {
+    0% {
+      opacity: 0;
+      transform: translateY(-150%);
+    }
+    100% {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+  } */
 `;
 
 const ListItems = styled.ul`

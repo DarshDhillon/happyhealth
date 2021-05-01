@@ -92,6 +92,10 @@ const Back = styled.div`
 const Title = styled.p`
   font-size: 1.5rem;
   color: var(--mainPurple);
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 const Image = styled.img`
   width: 200px;

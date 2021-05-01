@@ -27,7 +27,7 @@ const Hamburger = styled(RiMenu5Fill)`
   font-size: 3rem;
   position: fixed;
   top: 2rem;
-  right: 0.7rem;
+  right: 0.2rem;
   color: darkslategray;
   z-index: 999;
   cursor: pointer;
@@ -40,13 +40,13 @@ const Hamburger = styled(RiMenu5Fill)`
 const Dropdown = styled.div`
   z-index: 998;
   position: fixed;
-  top: ${({ showMenu }) => (showMenu ? '0' : '-100%')};
+  top: ${({ showMenu }) => (showMenu ? '0' : '-150%')};
   left: 0;
   bottom: 0;
   height: 100vh;
   width: 100%;
   background: var(--mainBlue);
-  transition: top 300ms ease-in-out;
+  transition: top 500ms ease-in-out;
   @media screen and (min-width: 768px) {
     display: none;
   }

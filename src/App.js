@@ -7,6 +7,9 @@ import DropMenu from './components/DropMenu/DropMenu';
 import Foodie from './pages/Foodie';
 import Home from './pages/Home';
 import Take5 from './pages/Take5';
+import Workouts from './pages/Workouts';
+import Shop from './pages/Shop';
+import Featured from './components/Featured/Featured';
 
 const App = () => {
   return (
@@ -20,7 +23,10 @@ const App = () => {
           <Route path='/' exact component={Home} />
           <Route path='/foodie' component={Foodie} />
           <Route path='/take5' component={Take5} />
+          <Route path='/workouts' component={Workouts} />
+          <Route path='/shop' component={Shop} />
         </Switch>
+        <Featured />
         <Footer />
       </Router>
     </>

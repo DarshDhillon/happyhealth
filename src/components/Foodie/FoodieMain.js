@@ -49,6 +49,10 @@ const TextWrapper = styled.div`
   align-items: center;
   margin: 0 auto;
 
+  @media screen and (max-width: 768px) {
+    width: 80%;
+  }
+
   h1 {
     font-size: clamp(3rem, 5vw, 4rem);
     padding: 1rem;

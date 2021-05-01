@@ -7,6 +7,10 @@ const GlobalStyle = createGlobalStyle`
     --mainBlue: #009fe3;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
