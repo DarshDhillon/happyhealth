@@ -3,6 +3,7 @@ import { useContext, useRef } from 'react';
 import styled from 'styled-components';
 import { ModalVideoContext } from '../../context/Take5/ModalVideoProvider';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import VideoControls from './VideoControls';
 
 const ROOT = document.getElementById('take5-modal-root');
 
@@ -18,6 +19,8 @@ const VideoModal = ({ children }) => {
       onClick={(e) => e.target === modalRef.current && setShowModal(false)}
     >
       <CloseIcon onClick={() => setShowModal(false)} />
+      <VideoControls />
+
       {children}
     </ModalContainer>,
     ROOT
@@ -40,8 +43,8 @@ const CloseIcon = styled(AiOutlineCloseCircle)`
   position: absolute;
   top: 50px;
   right: 50px;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   color: lightgrey;
   transition: all 0.2s ease-in-out;
 

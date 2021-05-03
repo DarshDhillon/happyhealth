@@ -1,22 +1,17 @@
-import { useEffect, useRef, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import styled from 'styled-components';
-import BeachVideo from '../../videos/beach.mp4';
-import RainVideo from '../../videos/rain.mp4';
 import { ModalVideoContext } from '../../context/Take5/ModalVideoProvider';
 
 const VideoPlayer = () => {
-  const videoRef = useRef();
-  const { chosenVideo } = useContext(ModalVideoContext);
-
-  let selectedVideo = chosenVideo === 'beach' ? BeachVideo : RainVideo;
+  const { chosenVideo, videoRef } = useContext(ModalVideoContext);
 
   useEffect(() => {
-    videoRef.current.volume = 0.2;
+    videoRef.current.volume = 0.1;
   }, []);
 
   return (
     <VideoWrapper>
-      <Video ref={videoRef} src={selectedVideo} autoPlay controls loop />
+      <Video ref={videoRef} src={chosenVideo.path} autoPlay loop />
     </VideoWrapper>
   );
 };
@@ -36,7 +31,7 @@ const VideoWrapper = styled.div`
 `;
 
 const Video = styled.video`
-  border-radius: 2rem;
+  border-radius: 1rem;
   height: auto;
   width: 100%;
 `;

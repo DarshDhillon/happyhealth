@@ -26,7 +26,6 @@ const useFoodieSearch = () => {
         `https://api.edamam.com/search?q=${searchQuery}&app_id=${ID}&app_key=${KEY}&from=0&to=30`
       )
       .then(({ data }) => {
-        console.log(data);
         dispatch({ type: 'FETCH_DATA', payload: data });
       })
       .catch((error) => {

@@ -33,7 +33,8 @@ const Recipecard = ({ item }) => {
 export default Recipecard;
 
 const Card = styled.div`
-  padding: 1rem 0;
+  /* border: 1px solid red; */
+  padding: 1rem;
   display: flex;
   justify-content: center;
   margin: 1rem 0;
@@ -70,6 +71,7 @@ const Card = styled.div`
 `;
 
 const Front = styled.div`
+  /* border: 1px solid red; */
   display: flex;
   padding: 0.1rem;
   flex-direction: column;
@@ -77,7 +79,6 @@ const Front = styled.div`
   align-items: center;
   position: absolute;
   backface-visibility: hidden;
-  /* border: 1px solid red; */
   height: 90%;
   width: 100%;
 `;

@@ -14,7 +14,6 @@ export default Main;
 const Container = styled.main`
   /* border: 1px solid red; */
   padding: 3rem 0;
-  /* height: 1000px; */
   width: 100%;
   background: linear-gradient(#e8f2f7, #f0e9f3);
 `;

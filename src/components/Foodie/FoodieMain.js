@@ -12,7 +12,6 @@ const FoodieMain = () => {
 
   return (
     <Container>
-      {console.log(recipes.length)}
       <TextWrapper>
         <h1>
           <span>you</span> are what <span>you</span> eat

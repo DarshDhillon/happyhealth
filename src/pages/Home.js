@@ -1,7 +1,13 @@
-import HomeSections from '../components/HomeSections/HomeSections';
+import HomeSections from '../components/Home/HomeSections';
+import HeroMain from '../components/Home/Hero';
 
 const Home = () => {
-  return <HomeSections />;
+  return (
+    <>
+      <HeroMain />
+      <HomeSections />
+    </>
+  );
 };
 
 export default Home;

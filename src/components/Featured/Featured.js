@@ -1,9 +1,6 @@
 import styled from 'styled-components';
-import SkyNews from '../../images/featured/sky_news2.png';
-import BBCNews from '../../images/featured/bbc_news3.png';
-import DailyMail from '../../images/featured/daily_mail.png';
-import KissFM from '../../images/featured/kiss_fm.png';
 import { Slide } from 'react-slideshow-image';
+import FeaturedData from '../../data/Featured/FeaturedData';
 import 'react-slideshow-image/dist/styles.css';
 
 const Featured = () => {
@@ -11,18 +8,11 @@ const Featured = () => {
     <Container>
       <Headline>As featured on:</Headline>
       <Slide duration={2000} arrows={false} pauseOnHover={false}>
-        <ImgWrapper>
-          <Image src={SkyNews} />
-        </ImgWrapper>
-        <ImgWrapper>
-          <Image src={BBCNews} />
-        </ImgWrapper>
-        <ImgWrapper>
-          <Image src={DailyMail} />
-        </ImgWrapper>
-        <ImgWrapper>
-          <Image src={KissFM} />
-        </ImgWrapper>
+        {FeaturedData.map((item) => (
+          <ImgWrapper key={item.id}>
+            <Image src={item.img} />
+          </ImgWrapper>
+        ))}
       </Slide>
     </Container>
   );
@@ -31,9 +21,17 @@ const Featured = () => {
 export default Featured;
 
 const Container = styled.div`
-  padding: 2rem;
-  border-bottom: 1px solid lightgray;
+  padding: 1rem;
   position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    padding-top: 10px;
+    border-bottom: 1px solid lightgray;
+  }
 `;
 
 const Headline = styled.small`
@@ -41,7 +39,7 @@ const Headline = styled.small`
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
   font-weight: 200;
 `;
 
@@ -59,5 +57,4 @@ const ImgWrapper = styled.div`
   display: flex;
   align-items: center;
   margin: 0 auto;
-  /* border: 1px solid red; */
 `;

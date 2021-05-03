@@ -32,7 +32,7 @@ const Hamburger = styled(RiMenu5Fill)`
   z-index: 999;
   cursor: pointer;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     display: none;
   }
 `;
@@ -47,7 +47,7 @@ const Dropdown = styled.div`
   width: 100%;
   background: var(--mainBlue);
   transition: top 500ms ease-in-out;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     display: none;
   }
 `;

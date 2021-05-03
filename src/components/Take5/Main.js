@@ -26,13 +26,13 @@ const Main = () => {
       <ImageContainer>
         <Image
           name='beach'
-          onClick={(e) => handleImageClick(e)}
+          onClick={handleImageClick}
           src={BeachImage}
           alt='beach'
         />
         <Image
           name='rain'
-          onClick={(e) => handleImageClick(e)}
+          onClick={handleImageClick}
           src={RainImage}
           alt='rain'
         />
