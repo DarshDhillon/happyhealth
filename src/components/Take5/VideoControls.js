@@ -37,7 +37,7 @@ const VideoControls = () => {
   useEffect(() => {
     setTimeout(() => {
       showControls && setShowControls(false);
-    }, 6000);
+    }, 9000);
   }, [showControls]);
 
   return (

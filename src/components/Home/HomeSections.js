@@ -1,23 +1,27 @@
 import styled from 'styled-components';
 import HomePageData from '../../data/HomepageSections/HomePageSections';
+import { BsBoxArrowRight } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const HomeSections = () => {
   return (
     <>
       {HomePageData.map((section) => (
         <SectionContainer reverse={section.reverse} key={section.id}>
-          <SectionWrapper reverse={section.reverse}>
-            <SectionDescription reverse={section.reverse}>
-              <h1>
-                {section.title}{' '}
-                <span>
-                  <button>Testing</button>
-                </span>{' '}
-              </h1>
-              <p>{section.description}</p>
-            </SectionDescription>
-            <SectionImage src={section.image} alt={section.alt} />
-          </SectionWrapper>
+          <WrapperLink to={section.to}>
+            <SectionWrapper reverse={section.reverse}>
+              <SectionDescription reverse={section.reverse}>
+                <h1>
+                  {section.title}
+                  <span>
+                    <GoToIcon />
+                  </span>
+                </h1>
+                <p>{section.description}</p>
+              </SectionDescription>
+              <SectionImage src={section.image} alt={section.alt} />
+            </SectionWrapper>
+          </WrapperLink>
         </SectionContainer>
       ))}
     </>
@@ -66,10 +70,36 @@ const SectionDescription = styled.div`
     max-width: 100%;
     text-align: center;
   }
+
+  span {
+    margin-left: 1rem;
+    visibility: hidden;
+  }
+
+  &:hover {
+    span {
+      visibility: visible;
+    }
+  }
 `;
 
 const SectionImage = styled.img`
   /* border: 1px solid black; */
   height: 350px;
   width: 350px;
+`;
+
+const GoToIcon = styled(BsBoxArrowRight)`
+  height: 25px;
+  width: 25px;
+  color: black;
+  /* cursor: pointer; */
+`;
+
+const WrapperLink = styled(Link)`
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
 `;

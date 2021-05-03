@@ -14,6 +14,7 @@ const HomePageData = [
     image: WorkoutImg,
     alt: 'workout',
     reverse: false,
+    to: '/workouts',
   },
   {
     id: uuid(),
@@ -23,6 +24,7 @@ const HomePageData = [
     image: FoodImg,
     alt: 'nutrition',
     reverse: true,
+    to: '/foodie',
   },
   {
     id: uuid(),
@@ -32,6 +34,7 @@ const HomePageData = [
     image: MeditationImg,
     alt: 'meditating',
     reverse: false,
+    to: '/take5',
   },
   {
     id: uuid(),
@@ -41,6 +44,7 @@ const HomePageData = [
     image: ShopImg,
     alt: 'shopping',
     reverse: true,
+    to: '/shop',
   },
 ];
 export default HomePageData;
