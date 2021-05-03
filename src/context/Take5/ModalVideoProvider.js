@@ -14,9 +14,9 @@ const ModalVideoProvider = ({ children }) => {
     setChosenVideo((prev) => {
       switch (prev.name) {
         case 'beach':
-          return { name: 'rain', path: RainVideo };
+          return { ...prev, name: 'rain', path: RainVideo };
         case 'rain':
-          return { name: 'beach', path: BeachVideo };
+          return { ...prev, name: 'beach', path: BeachVideo };
         default:
           return prev;
       }
