@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import LogoMain from '../../images/logos/hh_logo_main.png';
 import { Link } from 'react-router-dom';
-import { TiContacts } from 'react-icons/ti';
 
 const Navbar = () => {
   return (
@@ -19,9 +18,6 @@ const Navbar = () => {
             take5
           </ListItem>
           <ListItem to='/shop'>shop</ListItem>
-          <ListItem borderbottom='false' primary='true' to='/contact'>
-            <Icon />
-          </ListItem>
         </ListItems>
       </NavContainer>
     </Nav>
@@ -101,5 +97,3 @@ const ListItem = styled(Link)`
       primary ? '4px solid var(--mainPurple)' : '4px solid var(--mainBlue)'};
   }
 `;
-
-const Icon = styled(TiContacts)``;

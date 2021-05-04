@@ -5,23 +5,19 @@ import AccordionQuestions from '../../data/Accordion/AccordionQuestions';
 const Accordion = () => {
   const [showAnswer, setShowAnswer] = useState(false);
 
-  const toggleAnswer = (index) => {
-    showAnswer === index ? setShowAnswer(null) : setShowAnswer(index);
+  const toggleAnswer = (id) => {
+    showAnswer === id ? setShowAnswer(null) : setShowAnswer(id);
   };
 
   return (
     <Container>
-      {AccordionQuestions.map((item, index) => (
-        <SectionWrapper key={item.id} onClick={() => toggleAnswer(index)}>
-          <QuestionWrapper>
-            <TextWrapper>
-              <p>{item.question}</p>
-            </TextWrapper>
+      {AccordionQuestions.map((item) => (
+        <SectionWrapper key={item.id} onClick={() => toggleAnswer(item.id)}>
+          <QuestionWrapper reverse={item.reverse}>
+            <p>{item.question}</p>
           </QuestionWrapper>
-          <AnswerWrapper showAnswer={showAnswer} index={index}>
-            <TextWrapper>
-              <p>{item.answer}</p>
-            </TextWrapper>
+          <AnswerWrapper showAnswer={showAnswer} id={item.id}>
+            <p>{item.answer}</p>
           </AnswerWrapper>
         </SectionWrapper>
       ))}
@@ -32,46 +28,62 @@ const Accordion = () => {
 export default Accordion;
 
 const Container = styled.div`
-  background-color: lightblue;
-  width: 50%;
-  margin: 0 auto;
+  /* border: 1px solid black; */
+  height: 400px;
+  background-color: #fff;
+  width: 600px;
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   cursor: pointer;
+  border: 1px solid black;
+
+  @media screen and (max-width: 768px) {
+    width: 400px;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 300px;
+  }
 `;
 
-const SectionWrapper = styled.div``;
+const SectionWrapper = styled.div`
+  /* display: flex; */
+  /* border: 1px solid blue; */
+`;
 
 const QuestionWrapper = styled.div`
+  /* border: 1px solid white; */
+  padding: 0.2rem 0;
   height: 20%;
-  background-color: lightcoral;
-  margin: 0 auto;
+  background-color: ${({ reverse }) =>
+    reverse ? 'var(--mainPurple)' : 'var(--mainBlue)'};
+  /* margin: 0 auto; */
   border-radius: 0.5rem;
   margin: 1rem 0;
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  /* border-bottom: 1px solid black; */
+
+  p {
+    font-size: 1.5rem;
+    color: #fff;
+  }
 `;
 
 const AnswerWrapper = styled.div`
-  display: ${({ showAnswer, index }) =>
-    showAnswer === index ? 'in-block' : 'none'};
-
-  height: 20%;
-  background-color: darkgreen;
+  max-height: ${({ showAnswer, id }) => (showAnswer === id ? '20%' : '0')};
+  opacity: ${({ showAnswer, id }) => (showAnswer === id ? '1' : '0')};
+  /* overflow-y: hidden; */
+  /* background-color: var(--mainBlue); */
   margin: 0 auto;
   border-radius: 0.5rem;
-  transform: ${({ showAnswer, index }) =>
-    showAnswer === index ? 'translateY(0)' : 'translateY(-100%)'};
-  opacity: ${({ showAnswer, index }) => (showAnswer === index ? '1' : '0')};
-  transition: all 0.3s ease-in-out;
-`;
-
-const TextWrapper = styled.div`
-  height: 90%;
-  width: 90%;
+  transition: all 0.4s ease-in-out;
   display: flex;
   justify-content: center;
 
   p {
     font-size: 1.5rem;
-    color: #fff;
+    color: #000;
   }
 `;

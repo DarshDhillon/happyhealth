@@ -14,10 +14,13 @@ const Contact = () => {
 export default Contact;
 
 const Container = styled.div`
-  height: 100vh;
-  width: 100%;
+  /* border: 1px solid black; */
+  /* height: 100vh; */
+  /* width: 100%; */
   background: linear-gradient(#e8f2f7, #f0e9f3);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
 `;

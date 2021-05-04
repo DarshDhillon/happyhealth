@@ -4,27 +4,32 @@ const AccordionQuestions = [
   {
     id: uuid(),
     question: 'What day is it?',
-    answer: 'It is Tuesday',
+    answer: 'Mon',
+    reverse: true,
   },
   {
     id: uuid(),
     question: 'What day is it?',
-    answer: 'It is Tuesday',
+    answer: 'Tue',
+    reverse: false,
   },
   {
     id: uuid(),
     question: 'What day is it?',
-    answer: 'It is Tuesday',
+    answer: 'Wed',
+    reverse: true,
   },
   {
     id: uuid(),
     question: 'What day is it?',
-    answer: 'It is Tuesday',
+    answer: 'Thu',
+    reverse: false,
   },
   {
     id: uuid(),
     question: 'What day is it?',
-    answer: 'It is Tuesday',
+    answer: 'Fri',
+    reverse: true,
   },
 ];
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import ReactMapGL, { Marker } from 'react-map-gl';
+import ReactMapGL from 'react-map-gl';
 
 const Map = () => {
   const [viewport, setViewport] = useState({
@@ -35,6 +35,7 @@ const MapContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   /* height: 800px; */
   /* margin: 0 auto; */
   /* border: 1px solid black; */
@@ -44,4 +45,13 @@ const MapWrapper = styled.div`
   border: 1px solid grey;
   height: 400px;
   width: 600px;
+  border-radius: 0.2rem;
+
+  @media screen and (max-width: 768px) {
+    width: 400px;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 300px;
+  }
 `;

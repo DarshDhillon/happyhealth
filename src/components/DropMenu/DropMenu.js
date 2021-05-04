@@ -3,6 +3,13 @@ import styled from 'styled-components';
 import { RiMenu5Fill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 
+import { AiOutlineHome } from 'react-icons/ai';
+import { CgGym } from 'react-icons/cg';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { MdAccessTime } from 'react-icons/md';
+import { FiShoppingCart } from 'react-icons/fi';
+import { TiContacts } from 'react-icons/ti';
+
 const DropMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -11,11 +18,45 @@ const DropMenu = () => {
       <Hamburger onClick={() => setShowMenu((prev) => !prev)} />
       <Dropdown showMenu={showMenu}>
         <LinkContainer onClick={() => setShowMenu((prev) => !prev)}>
-          <LinkItem to='/workouts'>workouts</LinkItem>
-          <LinkItem to='/foodie'>foodie</LinkItem>
-          <LinkItem to='/take5'>take5</LinkItem>
-          <LinkItem to='/shop'>shop</LinkItem>
-          <LinkItem to='/contact'>c</LinkItem>
+          <LinkItem to='/'>
+            <span>
+              <HomeIcon />
+            </span>
+            home
+          </LinkItem>
+          <LinkItem to='/workouts'>
+            <span>
+              <GymIcon />
+            </span>
+            workouts
+          </LinkItem>
+          <LinkItem to='/foodie'>
+            <span>
+              <FoodIcon />
+            </span>
+            foodie
+          </LinkItem>
+          <LinkItem to='/take5'>
+            {' '}
+            <span>
+              <Take5Icon />
+            </span>{' '}
+            take5
+          </LinkItem>
+          <LinkItem to='/shop'>
+            {' '}
+            <span>
+              <ShopIcon />
+            </span>{' '}
+            shop
+          </LinkItem>
+          <LinkItem to='/contact'>
+            {' '}
+            <span>
+              <ContactIcon />
+            </span>{' '}
+            contact
+          </LinkItem>
         </LinkContainer>
       </Dropdown>
     </>
@@ -53,6 +94,42 @@ const Dropdown = styled.div`
   }
 `;
 
+const HomeIcon = styled(AiOutlineHome)`
+  height: 30px;
+  width: 30px;
+  color: #fff;
+`;
+
+const GymIcon = styled(CgGym)`
+  height: 30px;
+  width: 30px;
+  color: #fff;
+`;
+
+const FoodIcon = styled(AiOutlineSearch)`
+  height: 30px;
+  width: 30px;
+  color: #fff;
+`;
+
+const Take5Icon = styled(MdAccessTime)`
+  height: 30px;
+  width: 30px;
+  color: #fff;
+`;
+
+const ShopIcon = styled(FiShoppingCart)`
+  height: 30px;
+  width: 30px;
+  color: #fff;
+`;
+
+const ContactIcon = styled(TiContacts)`
+  height: 30px;
+  width: 30px;
+  color: #fff;
+`;
+
 const LinkContainer = styled.div`
   height: 100%;
   width: 100%;
@@ -74,5 +151,9 @@ const LinkItem = styled(Link)`
 
   &:hover {
     color: var(--mainPurple);
+  }
+
+  span {
+    margin-right: 10px;
   }
 `;
