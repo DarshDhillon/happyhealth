@@ -10,6 +10,7 @@ import Take5 from './pages/Take5';
 import Workouts from './pages/Workouts';
 import Shop from './pages/Shop';
 import Featured from './components/Featured/Featured';
+import Contact from './pages/Contact.js';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path='/take5' component={Take5} />
           <Route path='/workouts' component={Workouts} />
           <Route path='/shop' component={Shop} />
+          <Route path='/contact' component={Contact} />
         </Switch>
         <Featured />
         <Footer />

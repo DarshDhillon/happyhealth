@@ -89,6 +89,7 @@ const SearchButton = styled.button`
   font-weight: 500;
   color: #fff;
   transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     font-weight: 700;

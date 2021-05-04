@@ -7,7 +7,12 @@ const Featured = () => {
   return (
     <Container>
       <Headline>As featured on:</Headline>
-      <Slide duration={2000} arrows={false} pauseOnHover={false}>
+      <Slide
+        duration={2000}
+        arrows={false}
+        pauseOnHover={false}
+        canSwipe={false}
+      >
         {FeaturedData.map((item) => (
           <ImgWrapper key={item.id}>
             <Image src={item.img} />
@@ -23,6 +28,7 @@ export default Featured;
 const Container = styled.div`
   padding: 1rem;
   position: relative;
+  user-select: none;
 
   &::after {
     content: '';
@@ -44,6 +50,8 @@ const Headline = styled.small`
 `;
 
 const Image = styled.img`
+  user-select: none;
+
   width: 180px;
 
   @media screen and (max-width: 768px) {
@@ -52,6 +60,8 @@ const Image = styled.img`
 `;
 
 const ImgWrapper = styled.div`
+  user-select: none;
+
   height: 100%;
   justify-content: center;
   display: flex;

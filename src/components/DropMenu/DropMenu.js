@@ -15,6 +15,7 @@ const DropMenu = () => {
           <LinkItem to='/foodie'>foodie</LinkItem>
           <LinkItem to='/take5'>take5</LinkItem>
           <LinkItem to='/shop'>shop</LinkItem>
+          <LinkItem to='/contact'>c</LinkItem>
         </LinkContainer>
       </Dropdown>
     </>
@@ -24,10 +25,10 @@ const DropMenu = () => {
 export default DropMenu;
 
 const Hamburger = styled(RiMenu5Fill)`
-  font-size: 3rem;
+  font-size: 2rem;
   position: fixed;
   top: 2rem;
-  right: 0.2rem;
+  right: 1.2rem;
   color: darkslategray;
   z-index: 999;
   cursor: pointer;
