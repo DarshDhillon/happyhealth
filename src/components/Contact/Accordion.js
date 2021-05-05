@@ -28,14 +28,13 @@ const Accordion = () => {
 export default Accordion;
 
 const Container = styled.div`
-  /* border: 1px solid black; */
+  border: 1px solid grey;
   height: 400px;
   background-color: #fff;
   width: 600px;
   padding: 1rem;
   border-radius: 0.2rem;
   cursor: pointer;
-  border: 1px solid black;
 
   @media screen and (max-width: 768px) {
     width: 400px;

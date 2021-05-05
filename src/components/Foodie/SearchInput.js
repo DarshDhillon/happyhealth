@@ -19,6 +19,7 @@ const SearchInput = () => {
       <Form onSubmit={handleFormSubmit}>
         <Wrapper>
           <FoodSearchInput
+            required
             ref={inputRef}
             value={inputState}
             onChange={(e) => setInputState(e.target.value)}

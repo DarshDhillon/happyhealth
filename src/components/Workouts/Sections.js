@@ -67,7 +67,7 @@ const Section = styled.section`
   align-items: center;
   margin: 0 auto;
   width: 80%;
-  padding: 1rem 0;
+  padding: 3rem 0;
 
   @media screen and (max-width: 1100px) {
     flex-direction: column;
@@ -103,4 +103,8 @@ const ImageWrapper = styled.div`
 const Image = styled(motion.img)`
   border-radius: 0.5rem;
   width: ${({ vertical }) => (vertical ? '50%' : '80%')};
+
+  @media screen and (max-width: 768px) {
+    width: ${({ vertical }) => (vertical ? '65%' : '95%')};
+  }
 `;

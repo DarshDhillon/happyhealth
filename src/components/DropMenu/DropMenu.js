@@ -97,37 +97,37 @@ const Dropdown = styled.div`
 const HomeIcon = styled(AiOutlineHome)`
   height: 30px;
   width: 30px;
-  color: #fff;
+  color: var(--mainPurple);
 `;
 
 const GymIcon = styled(CgGym)`
   height: 30px;
   width: 30px;
-  color: #fff;
+  color: var(--mainPurple);
 `;
 
 const FoodIcon = styled(AiOutlineSearch)`
   height: 30px;
   width: 30px;
-  color: #fff;
+  color: var(--mainPurple);
 `;
 
 const Take5Icon = styled(MdAccessTime)`
   height: 30px;
   width: 30px;
-  color: #fff;
+  color: var(--mainPurple);
 `;
 
 const ShopIcon = styled(FiShoppingCart)`
   height: 30px;
   width: 30px;
-  color: #fff;
+  color: var(--mainPurple);
 `;
 
 const ContactIcon = styled(TiContacts)`
   height: 30px;
   width: 30px;
-  color: #fff;
+  color: var(--mainPurple);
 `;
 
 const LinkContainer = styled.div`

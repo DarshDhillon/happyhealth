@@ -20,5 +20,5 @@ const Container = styled.main`
 
 const TempDiv = styled.div`
   background-color: lightgreen;
-  height: 400px;
+  height: 700px;
 `;
