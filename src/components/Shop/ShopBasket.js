@@ -7,10 +7,10 @@ import BasketHover from './BasketHover';
 const ShopBasket = () => {
   const { basketItems } = useContext(ShopContext);
 
-  if (basketItems.length === 0) return null;
+  // if (basketItems.length === 0) return null;
 
   return (
-    <BasketContainer>
+    <BasketContainer basketItems={basketItems}>
       <CartIcon />
       <BasketQuantity>{basketItems.length}</BasketQuantity>
       <BasketHover />
@@ -21,6 +21,9 @@ const ShopBasket = () => {
 export default ShopBasket;
 
 const BasketContainer = styled.div`
+  opacity: ${({ basketItems }) => (basketItems.length > 0 ? '1' : '0')};
+  visibility: ${({ basketItems }) =>
+    basketItems.length > 0 ? 'visible' : 'hidden'};
   height: 150px;
   width: 150px;
   position: fixed;
@@ -34,7 +37,7 @@ const BasketContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: 0.4s ease-in-out;
+  transition: 0.6s ease-in-out;
   cursor: pointer;
 
   &:hover {

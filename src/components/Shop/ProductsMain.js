@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ShopContext } from '../../context/Shop/shopProvider';
 
 const ProductsMain = () => {
-  const { handleBuy, shopProducts } = useContext(ShopContext);
+  const { handleAddOneItem, shopProducts } = useContext(ShopContext);
 
   return (
     <ProductsContainer>
@@ -12,7 +12,7 @@ const ProductsMain = () => {
           <ProductTitle>{item.productName}</ProductTitle>
           <ProductDescription>{item.productDescription}</ProductDescription>
           <ProductImage src={item.img} alt={item.alt} />
-          <BuyButton onClick={() => handleBuy(item)}>
+          <BuyButton onClick={() => handleAddOneItem(item)}>
             BUY £{item.price}
           </BuyButton>
         </ProductWrapper>

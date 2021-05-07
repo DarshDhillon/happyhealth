@@ -43,26 +43,26 @@ const shopProducts = [
     img: Polo2Black,
     alt: 'polo black',
   },
-  // {
-  //   id: uuid(),
-  //   productName: `HH Men's polo white`,
-  //   productDescription:
-  //     'Designed from a cotton piqué fabric which is durable, breathable and features a button placket, ribbed collar and cuffs',
-  //   price: `20`,
-  //   quantity: 0,
-  //   img: Polo1White,
-  //   alt: 'polo white',
-  // },
-  // {
-  //   id: uuid(),
-  //   productName: `HH Men's polo black`,
-  //   productDescription:
-  //     'Designed from a cotton piqué fabric which is durable, breathable and features a button placket, ribbed collar and cuffs',
-  //   price: `20`,
-  //   quantity: 0,
-  //   img: Polo2Black,
-  //   alt: 'polo black',
-  // },
+  {
+    id: uuid(),
+    productName: `HH Men's polo white`,
+    productDescription:
+      'Designed from a cotton piqué fabric which is durable, breathable and features a button placket, ribbed collar and cuffs',
+    price: `20`,
+    quantity: 0,
+    img: Polo1White,
+    alt: 'polo white',
+  },
+  {
+    id: uuid(),
+    productName: `HH Men's polo black`,
+    productDescription:
+      'Designed from a cotton piqué fabric which is durable, breathable and features a button placket, ribbed collar and cuffs',
+    price: `20`,
+    quantity: 0,
+    img: Polo2Black,
+    alt: 'polo black',
+  },
   // {
   //   id: uuid(),
   //   productName: `HH Men's polo white`,

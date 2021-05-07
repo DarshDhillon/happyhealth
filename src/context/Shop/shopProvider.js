@@ -10,14 +10,17 @@ const ShopContextProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(shopReducer, initialState);
 
-  const handleBuy = (item) => {
-    dispatch({ type: 'ADD_ITEM', payload: item });
+  const handleAddOneItem = (item) => {
+    dispatch({
+      type: 'ADD_ADDITIONAL_ITEM',
+      payload: item,
+    });
   };
 
-  const handleDelete = (itemID) => {
+  const handleRemoveOneItem = (item) => {
     dispatch({
-      type: 'DELETE_ITEM',
-      payload: itemID,
+      type: 'REMOVE_ONE_ITEM',
+      payload: item,
     });
   };
 
@@ -25,8 +28,8 @@ const ShopContextProvider = ({ children }) => {
     <ShopContext.Provider
       value={{
         shopProducts,
-        handleBuy,
-        handleDelete,
+        handleAddOneItem,
+        handleRemoveOneItem,
         basketItems: state.items,
       }}
     >

@@ -55,6 +55,7 @@ const CloseIcon = styled(AiOutlineCloseCircle)`
   width: 60px;
   color: lightgrey;
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.5);

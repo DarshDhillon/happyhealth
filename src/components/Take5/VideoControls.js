@@ -69,6 +69,7 @@ const ControlsContainer = styled.div`
   transform: ${({ showControls }) =>
     showControls ? 'translateY(0)' : 'translateY(100%)'};
   transition: all 0.5s ease-in-out;
+  cursor: pointer;
 
   @media screen and (max-width: 700px) {
     width: 70%;
@@ -93,6 +94,7 @@ const ControlButton = styled(FiSettings)`
   width: 40px;
   color: lightgrey;
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
 `;
 
 const VolumeWrapper = styled.div`

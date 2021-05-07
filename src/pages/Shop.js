@@ -21,7 +21,8 @@ const Shop = () => {
 export default Shop;
 
 const Container = styled.div`
-  border: 1px solid green;
+  padding: 2rem 0;
+  /* border: 1px solid green; */
   background: linear-gradient(#e8f2f7, #f0e9f3);
   display: flex;
   flex-direction: column;

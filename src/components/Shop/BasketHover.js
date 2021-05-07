@@ -3,18 +3,25 @@ import styled from 'styled-components';
 import { ShopContext } from '../../context/Shop/shopProvider';
 
 const BasketHover = () => {
-  const { handleDelete, basketItems } = useContext(ShopContext);
+  const { handleRemoveOneItem, handleAddOneItem, basketItems } = useContext(
+    ShopContext
+  );
 
   return (
     <BasketHoverContainer>
       <ItemsWrapper>
-        {basketItems.map((item) => (
-          <div key={item.id}>
-            <h2 style={{ color: '#fff' }}>{item.productName}</h2>
-            <h1 style={{ color: 'red' }}>{item.quantity}</h1>
-            <button onClick={() => handleDelete(item.id)}>Remove</button>
-          </div>
-        ))}
+        {basketItems.map(
+          (item) =>
+            item.quantity > 0 && (
+              <div key={item.id}>
+                <h2 style={{ color: '#fff' }}>{item.productName}</h2>
+                <h1 style={{ color: 'red' }}>{item.quantity}</h1>
+
+                <button onClick={() => handleAddOneItem(item)}>+</button>
+                <button onClick={() => handleRemoveOneItem(item)}>-</button>
+              </div>
+            )
+        )}
       </ItemsWrapper>
     </BasketHoverContainer>
   );
