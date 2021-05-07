@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import { ShopContext } from '../../context/Shop/shopProvider';
 
 const ProductsMain = () => {
-  const { handleBuy, shopProducts, basketItems } = useContext(ShopContext);
-
-  console.log(basketItems);
+  const { handleBuy, shopProducts } = useContext(ShopContext);
 
   return (
     <ProductsContainer>
@@ -14,7 +12,7 @@ const ProductsMain = () => {
           <ProductTitle>{item.productName}</ProductTitle>
           <ProductDescription>{item.productDescription}</ProductDescription>
           <ProductImage src={item.img} alt={item.alt} />
-          <BuyButton onClick={() => handleBuy(item.id)}>
+          <BuyButton onClick={() => handleBuy(item)}>
             BUY £{item.price}
           </BuyButton>
         </ProductWrapper>
@@ -27,7 +25,7 @@ export default ProductsMain;
 
 const ProductsContainer = styled.div`
   width: 100%;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   padding: 1rem;
   /* display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -49,14 +47,13 @@ const ProductWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
   background-color: #e6e3e3;
   text-align: center;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
 `;
 
 const ProductTitle = styled.h3`
-  color: #000;
+  color: var(--mainBlue);
 `;
 
 const ProductDescription = styled.p`
@@ -66,9 +63,11 @@ const ProductDescription = styled.p`
 const ProductImage = styled.img`
   width: 180px;
   transition: all 0.3s ease-in-out;
+  border-radius: 0.4rem;
+  cursor: pointer;
 
   &:hover {
-    transform: scale(2);
+    transform: scale(1.8);
     transition: all 0.3s ease-in-out;
   }
 `;
@@ -86,7 +85,7 @@ const BuyButton = styled.button`
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    transform: scale(1.1);
+    background-color: lightgreen;
     transition: all 0.3s ease-in-out;
   }
 `;

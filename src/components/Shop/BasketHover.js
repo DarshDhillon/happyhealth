@@ -10,8 +10,9 @@ const BasketHover = () => {
       <ItemsWrapper>
         {basketItems.map((item) => (
           <div key={item.id}>
-            <p>{item.productName}</p>
-            <button>Delete</button>
+            <h2 style={{ color: '#fff' }}>{item.productName}</h2>
+            <h1 style={{ color: 'red' }}>{item.quantity}</h1>
+            <button onClick={() => handleDelete(item.id)}>Remove</button>
           </div>
         ))}
       </ItemsWrapper>
@@ -22,9 +23,9 @@ const BasketHover = () => {
 export default BasketHover;
 
 const BasketHoverContainer = styled.div`
-  border: 1px solid black;
+  border: 1px solid red;
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
   padding: 1rem;
   display: none;
 `;

@@ -31,6 +31,7 @@ const BasketContainer = styled.div`
   z-index: 50;
   background-color: var(--mainBlue);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: 0.4s ease-in-out;
@@ -43,9 +44,9 @@ const BasketContainer = styled.div`
     transition: 0.4s ease-in-out;
   }
 
-  &:hover :nth-child(1) + :nth-child(2) {
+  /* &:hover :nth-child(1) + :nth-child(2) {
     display: none;
-  }
+  } */
 
   &:hover :nth-child(3) {
     display: block;

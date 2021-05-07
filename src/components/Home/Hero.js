@@ -4,7 +4,7 @@ import HeroVideo from '../../videos/Home/hero_vid.mp4';
 const Hero = () => {
   return (
     <HeroMain>
-      <HeroVid src={HeroVideo} muted autoPlay />
+      <HeroVid src={HeroVideo} muted />
     </HeroMain>
   );
 };
