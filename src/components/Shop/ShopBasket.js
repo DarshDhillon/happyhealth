@@ -1,27 +1,30 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import { ShopContext } from '../../context/Shop/shopProvider';
 import { MdAddCircleOutline } from 'react-icons/md';
 import { MdRemoveCircleOutline } from 'react-icons/md';
+import useBasketSaleTotal from '../../hooks/useBasketSaleTotal';
 
 const ShopBasket = () => {
   const { handleRemoveOneItem, handleAddOneItem, basketItems } = useContext(
     ShopContext
   );
 
+  const [totalSaleAmount] = useBasketSaleTotal(basketItems);
+
   return (
     <BasketContainer basketItems={basketItems}>
       <CartIcon />
       <BasketQuantity>{basketItems.length}</BasketQuantity>
       <HoverBasket>
-        <BagTitle>SHOPPING BASKET</BagTitle>
+        <BasketTitle>SHOPPING BASKET</BasketTitle>
         {basketItems.map((item) => (
           <ItemsWrapper key={item.id}>
             <ItemThumbnail src={item.img} alt={item.alt} />
             <ItemProductName>{item.productName}</ItemProductName>
             <ItemProductQuantity>{item.quantity}</ItemProductQuantity>
-
             <div>
               <BasketButtonAdd onClick={() => handleAddOneItem(item)}>
                 +
@@ -30,10 +33,18 @@ const ShopBasket = () => {
                 -
               </BasketButtonRemove>
             </div>
-            <ItemProductTotal>${item.price * item.quantity}</ItemProductTotal>
+            <ItemProductTotal>£{item.price * item.quantity}</ItemProductTotal>
           </ItemsWrapper>
         ))}
+        <BasketFooter>
+          <BasketTotalAmount>
+            BASKET TOTAL: <span>£{totalSaleAmount}</span>
+          </BasketTotalAmount>
+          <CheckoutButton to='/shop/checkout'>CHECKOUT</CheckoutButton>
+        </BasketFooter>
       </HoverBasket>
+
+      {/* <Route path='/store/checkout' component={Checkout} /> */}
     </BasketContainer>
   );
 };
@@ -48,13 +59,12 @@ const CartIcon = styled(RiShoppingCartLine)`
 `;
 
 const BasketQuantity = styled.p`
+  font-weight: bold;
   font-size: 2rem;
   position: absolute;
   top: 35%;
   left: 45%;
-  /* z-index: 51; */
   color: #fff;
-  /* transform: translateX(-50%), translateY(-50%); */
 `;
 
 const HoverBasket = styled.div`
@@ -66,6 +76,7 @@ const HoverBasket = styled.div`
 `;
 
 const BasketContainer = styled.div`
+  /* border: 1px solid black; */
   opacity: ${({ basketItems }) => (basketItems.length > 0 ? '1' : '0')};
   visibility: ${({ basketItems }) =>
     basketItems.length > 0 ? 'visible' : 'hidden'};
@@ -75,21 +86,20 @@ const BasketContainer = styled.div`
   top: 100px;
   right: 50px;
   border-radius: 50%;
-  /* border: 1px solid black; */
   z-index: 50;
   background-color: var(--mainBlue);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     width: 400px;
-    /* min-height: 400px; */
     border-radius: 1rem;
-    transition: 0.4s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
 
   &:hover ${CartIcon} {
@@ -106,18 +116,18 @@ const BasketContainer = styled.div`
 `;
 
 const ItemsWrapper = styled.div`
-  /* height: 100%; */
-  margin: 0.8rem auto;
   /* border: 1px solid black; */
+  margin: 0.8rem auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
-const BagTitle = styled.h3`
-  color: #fff;
+const BasketTitle = styled.h3`
+  color: var(--mainPurple);
   font-weight: bold;
   text-align: center;
+  font-size: 1.6rem;
 `;
 
 const ItemThumbnail = styled.img`
@@ -130,16 +140,52 @@ const ItemProductName = styled.p`
 
 const ItemProductQuantity = styled.p`
   font-size: 1.4rem;
+  color: #fff;
 `;
 
 const ItemProductTotal = styled.p`
   font-size: 1.4rem;
+  color: #fff;
 `;
 
 const BasketButtonRemove = styled(MdRemoveCircleOutline)`
   font-size: 1.8rem;
+  color: #e94747;
 `;
 
 const BasketButtonAdd = styled(MdAddCircleOutline)`
   font-size: 1.8rem;
+  color: #094e09;
+`;
+
+const BasketTotalAmount = styled.p`
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  span {
+    color: #fff;
+  }
+`;
+
+const CheckoutButton = styled(Link)`
+  padding: 0.5rem 1rem;
+  /* height: 40px; */
+  /* width: 100px; */
+  background-color: var(--mainPurple);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+
+  &:hover {
+    color: var(--mainPurple);
+    background-color: #fff;
+  }
+`;
+
+const BasketFooter = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 `;
