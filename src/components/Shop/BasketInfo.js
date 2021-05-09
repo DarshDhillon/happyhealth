@@ -7,6 +7,7 @@ const BasketInfo = ({ basketItems }) => {
 
   return (
     <Container>
+      <BasketHeading>Basket Info.</BasketHeading>
       <Headings>
         <Heading>Product</Heading>
         <Heading>Description</Heading>
@@ -39,8 +40,11 @@ const Container = styled.div`
   width: 40%;
   border: 1px solid black;
   height: 500px;
-
   user-select: none;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* align-items: center; */
 
   @media screen and (max-width: 1200px) {
     min-width: 65%;
@@ -49,6 +53,10 @@ const Container = styled.div`
   @media screen and (max-width: 768px) {
     min-width: 95%;
   }
+`;
+
+const BasketHeading = styled.h1`
+  margin-bottom: 1rem;
 `;
 
 const Headings = styled.div`
