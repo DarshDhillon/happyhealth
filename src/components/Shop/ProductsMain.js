@@ -6,18 +6,20 @@ const ProductsMain = () => {
   const { handleAddOneItem, shopProducts } = useContext(ShopContext);
 
   return (
-    <ProductsContainer>
-      {shopProducts.map((item) => (
-        <ProductWrapper key={item.id}>
-          <ProductTitle>{item.productName}</ProductTitle>
-          <ProductDescription>{item.productDescription}</ProductDescription>
-          <ProductImage src={item.img} alt={item.alt} />
-          <BuyButton onClick={() => handleAddOneItem(item)}>
-            BUY £{item.price}
-          </BuyButton>
-        </ProductWrapper>
-      ))}
-    </ProductsContainer>
+    <>
+      <ProductsContainer>
+        {shopProducts.map((item) => (
+          <ProductWrapper key={item.id}>
+            <ProductTitle>{item.productName}</ProductTitle>
+            <ProductDescription>{item.productDescription}</ProductDescription>
+            <ProductImage src={item.img} alt={item.alt} />
+            <BuyButton onClick={() => handleAddOneItem(item)}>
+              BUY £{item.price}
+            </BuyButton>
+          </ProductWrapper>
+        ))}
+      </ProductsContainer>
+    </>
   );
 };
 

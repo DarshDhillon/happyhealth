@@ -5,7 +5,7 @@ import RainImage from '../../images/take5/meditate_raining.svg';
 import { ModalVideoContext } from '../../context/Take5/ModalVideoProvider';
 
 const Main = () => {
-  const { handleImageClick } = useContext(ModalVideoContext);
+  const { handleChooseVideo } = useContext(ModalVideoContext);
 
   return (
     <Container>
@@ -26,13 +26,13 @@ const Main = () => {
       <ImageContainer>
         <Image
           name='beach'
-          onClick={handleImageClick}
+          onClick={handleChooseVideo}
           src={BeachImage}
           alt='beach'
         />
         <Image
           name='rain'
-          onClick={handleImageClick}
+          onClick={handleChooseVideo}
           src={RainImage}
           alt='rain'
         />

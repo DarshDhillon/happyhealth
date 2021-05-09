@@ -6,6 +6,7 @@ export const ShopContext = createContext();
 const ShopContextProvider = ({ children }) => {
   const initialState = {
     items: [],
+    showCheckout: false,
   };
 
   const [state, dispatch] = useReducer(shopReducer, initialState);
@@ -24,13 +25,21 @@ const ShopContextProvider = ({ children }) => {
     });
   };
 
+  const handleShowCheckout = () => {
+    dispatch({
+      type: 'SHOW_CHECKOUT',
+    });
+  };
+
   return (
     <ShopContext.Provider
       value={{
         shopProducts,
+        handleShowCheckout,
         handleAddOneItem,
         handleRemoveOneItem,
         basketItems: state.items,
+        showCheckout: state.showCheckout,
       }}
     >
       {children}

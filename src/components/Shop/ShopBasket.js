@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import { ShopContext } from '../../context/Shop/shopProvider';
@@ -8,11 +7,17 @@ import { MdRemoveCircleOutline } from 'react-icons/md';
 import useBasketSaleTotal from '../../hooks/useBasketSaleTotal';
 
 const ShopBasket = () => {
-  const { handleRemoveOneItem, handleAddOneItem, basketItems } = useContext(
-    ShopContext
-  );
+  const {
+    showCheckout,
+    handleShowCheckout,
+    handleRemoveOneItem,
+    handleAddOneItem,
+    basketItems,
+  } = useContext(ShopContext);
 
   const [totalSaleAmount] = useBasketSaleTotal(basketItems);
+
+  if (showCheckout) return null;
 
   return (
     <BasketContainer basketItems={basketItems}>
@@ -40,11 +45,11 @@ const ShopBasket = () => {
           <BasketTotalAmount>
             BASKET TOTAL: <span>£{totalSaleAmount}</span>
           </BasketTotalAmount>
-          <CheckoutButton to='/shop/checkout'>CHECKOUT</CheckoutButton>
+          <CheckoutButton onClick={() => handleShowCheckout((prev) => !prev)}>
+            CHECKOUT
+          </CheckoutButton>
         </BasketFooter>
       </HoverBasket>
-
-      {/* <Route path='/store/checkout' component={Checkout} /> */}
     </BasketContainer>
   );
 };
@@ -124,7 +129,7 @@ const ItemsWrapper = styled.div`
 `;
 
 const BasketTitle = styled.h3`
-  color: var(--mainPurple);
+  color: #fff;
   font-weight: bold;
   text-align: center;
   font-size: 1.6rem;
@@ -155,7 +160,7 @@ const BasketButtonRemove = styled(MdRemoveCircleOutline)`
 
 const BasketButtonAdd = styled(MdAddCircleOutline)`
   font-size: 1.8rem;
-  color: #094e09;
+  color: #8eff8e;
 `;
 
 const BasketTotalAmount = styled.p`
@@ -167,7 +172,7 @@ const BasketTotalAmount = styled.p`
   }
 `;
 
-const CheckoutButton = styled(Link)`
+const CheckoutButton = styled.button`
   padding: 0.5rem 1rem;
   /* height: 40px; */
   /* width: 100px; */
@@ -176,6 +181,9 @@ const CheckoutButton = styled(Link)`
   text-decoration: none;
   color: #fff;
   font-weight: 700;
+  outline: none;
+  border: none;
+  cursor: pointer;
 
   &:hover {
     color: var(--mainPurple);

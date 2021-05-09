@@ -1,11 +1,11 @@
 const useBasketSaleTotal = (basket) => {
-  const itemTotals = [];
+  const eachItemTotal = [];
 
-  basket.forEach((sale) => {
-    itemTotals.push(sale.price * sale.quantity);
+  basket.forEach((item) => {
+    eachItemTotal.push(item.price * item.quantity);
   });
 
-  const totalSaleAmount = itemTotals.reduce((a, b) => a + b, 0);
+  const totalSaleAmount = eachItemTotal.reduce((a, b) => a + b, 0);
 
   return [totalSaleAmount];
 };

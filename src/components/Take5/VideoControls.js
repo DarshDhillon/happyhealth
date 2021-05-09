@@ -51,7 +51,11 @@ const VideoControls = () => {
           {isPlaying ? <PauseImage /> : <PlayImage />}
         </PlayPauseWrapper>
         <VideoToggleWrapper onClick={handleVideoToggle}>
-          {chosenVideo.name === 'rain' ? <BeachIcon /> : <RainIcon />}
+          {chosenVideo.name === 'rain' ? (
+            <BeachIcon name='rain' />
+          ) : (
+            <RainIcon name='beach' />
+          )}
         </VideoToggleWrapper>
       </ControlsContainer>
     </>

@@ -3,14 +3,26 @@ import styled from 'styled-components';
 import { ShopContext } from '../../context/Shop/shopProvider';
 
 const Checkout = () => {
-  const { basketItems } = useContext(ShopContext);
+  const { showCheckout, basketItems } = useContext(ShopContext);
+
+  if (!showCheckout) return null;
+
+  console.log(basketItems);
 
   return (
-    <div>
-      <h1>hello from store</h1>
-      {console.log(basketItems)}
-    </div>
+    <MainDiv>
+      {basketItems.map((item) => (
+        <div key={item.id}>
+          <p>{item.productName}</p>
+        </div>
+      ))}
+    </MainDiv>
   );
 };
 
 export default Checkout;
+
+const MainDiv = styled.div`
+  background-color: pink;
+  height: 400px;
+`;

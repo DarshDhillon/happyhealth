@@ -3,6 +3,7 @@ import ProductsMain from '../components/Shop/ProductsMain';
 import ShopContextProvider from '../context/Shop/shopProvider';
 import ShopBasket from '../components/Shop/ShopBasket';
 import ShopBanner from '../images/shop/shop_banner2.jpg';
+import Checkout from '../components/Shop/Checkout';
 
 const Shop = () => {
   return (
@@ -14,6 +15,7 @@ const Shop = () => {
         <ShopBasket />
         <ProductsMain />
       </Container>
+      <Checkout />
     </ShopContextProvider>
   );
 };
