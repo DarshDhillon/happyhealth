@@ -118,7 +118,7 @@ const IngredientsContainer = styled.div`
   /* border: 1px solid blue; */
 
   &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); */
     background-color: #f5f5f5;
   }
 
