@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { ShopContext } from '../../context/Shop/shopProvider';
-import BasketInfo from './BasketInfo';
+import BasketCheckout from './BasketCheckout';
 import PaymentSection from './PaymentSection';
 
 const Checkout = () => {
@@ -10,16 +10,16 @@ const Checkout = () => {
   if (!showCheckout) return null;
 
   return (
-    <MainDiv>
-      <BasketInfo basketItems={basketItems} />
-      <PaymentSection />
-    </MainDiv>
+    <CheckoutSection>
+      <BasketCheckout basketItems={basketItems} />
+      <PaymentSection basketItems={basketItems} />
+    </CheckoutSection>
   );
 };
 
 export default Checkout;
 
-const MainDiv = styled.div`
+const CheckoutSection = styled.div`
   border: 1px solid blue;
   background: linear-gradient(#f0e9f3, #e8f2f7);
   /* height: 400px; */

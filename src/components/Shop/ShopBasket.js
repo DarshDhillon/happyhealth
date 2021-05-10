@@ -102,7 +102,7 @@ const BasketContainer = styled.div`
   user-select: none;
 
   &:hover {
-    width: 400px;
+    width: 450px;
     border-radius: 1rem;
     transition: 0.3s ease-in-out;
   }
@@ -117,6 +117,13 @@ const BasketContainer = styled.div`
 
   &:hover ${HoverBasket} {
     display: block;
+  }
+
+  @media screen and (max-width: 500px) {
+    &:hover {
+      right: 0;
+      width: 100vw;
+    }
   }
 `;
 
@@ -141,6 +148,10 @@ const ItemThumbnail = styled.img`
 
 const ItemProductName = styled.p`
   font-size: 1.1rem;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1rem;
+  }
 `;
 
 const ItemProductQuantity = styled.p`

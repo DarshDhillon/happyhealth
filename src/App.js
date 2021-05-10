@@ -10,7 +10,7 @@ import Take5 from './pages/Take5';
 import Workouts from './pages/Workouts';
 import Shop from './pages/Shop';
 import Contact from './pages/Contact.js';
-// import Featured from './components/Featured/Featured';
+import Featured from './components/Featured/Featured';
 
 const App = () => {
   return (

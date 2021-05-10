@@ -26,22 +26,18 @@ const ProductsMain = () => {
 export default ProductsMain;
 
 const ProductsContainer = styled.div`
-  width: 100%;
   /* border: 1px solid blue; */
-  padding: 1rem;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-auto-columns: auto; */
-  /* grid-template-columns: 400px 400px 400px; */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  /* overflow: hidden; */
+  width: 100%;
+  padding: 1rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  row-gap: 3rem;
 `;
 
 const ProductWrapper = styled.div`
   /* border: 1px solid red; */
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
+  margin: 0 auto;
   height: 400px;
   width: 250px;
   padding: 1rem;

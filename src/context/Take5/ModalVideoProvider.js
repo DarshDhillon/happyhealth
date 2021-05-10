@@ -23,7 +23,6 @@ const ModalVideoProvider = ({ children }) => {
     setChosenVideo({
       name: e.target.name,
       path: require(`../../videos/Take5/${e.target.name}.mp4`).default,
-      active: true,
     });
 
     setShowModal(true);
