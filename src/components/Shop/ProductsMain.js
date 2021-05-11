@@ -75,10 +75,11 @@ const BuyButton = styled.button`
   font-weight: bold;
   width: 60%;
   padding: 0.2rem 0.5rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   /* outline: none; */
-  border: 1px solid #824998;
-  background-color: #e1cee9;
+  background-color: #fff;
+  color: var(--mainPurple);
+  border: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 

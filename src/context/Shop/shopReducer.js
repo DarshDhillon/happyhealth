@@ -2,11 +2,15 @@ const shopReducer = (state, { type, payload }) => {
   switch (type) {
     case 'ADD_ADDITIONAL_ITEM':
       const matchedItem = state.items.find((item) => item.id === payload.id);
+      const randomOrderNumber = `${Math.floor(
+        Math.random() * 10000
+      )} - ${Math.floor(Math.random() * 1000)}`;
 
       if (!matchedItem) {
         return {
           ...state,
           items: [...state.items, { ...payload, quantity: 1 }],
+          checkoutOrderNumber: randomOrderNumber,
         };
       }
 
@@ -46,6 +50,18 @@ const shopReducer = (state, { type, payload }) => {
       return {
         ...state,
         showCheckout: true,
+      };
+
+    case 'SHOW_CHECKOUT_MODAL':
+      return {
+        ...state,
+        showCheckoutModal: true,
+      };
+
+    case 'ADD_TRANSACTION_INFO':
+      return {
+        ...state,
+        transactionInfo: { ...payload },
       };
 
     default:

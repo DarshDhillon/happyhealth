@@ -20,7 +20,7 @@ const Checkout = () => {
 export default Checkout;
 
 const CheckoutSection = styled.div`
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   background: linear-gradient(#f0e9f3, #e8f2f7);
   /* height: 400px; */
   display: flex;

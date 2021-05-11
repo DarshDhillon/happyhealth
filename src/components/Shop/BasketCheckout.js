@@ -1,18 +1,18 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { ShopContext } from '../../context/Shop/shopProvider';
 import useBasketSaleTotal from '../../hooks/useBasketSaleTotal';
-import useRandomOrderNumber from '../../hooks/useRandomOrderNumber';
 
 const BasketCheckout = ({ basketItems }) => {
-  const { handleAddOneItem, handleRemoveOneItem } = useContext(ShopContext);
+  const { handleAddOneItem, handleRemoveOneItem, checkoutOrderNumber } =
+    useContext(ShopContext);
 
   const [totalSaleAmount] = useBasketSaleTotal(basketItems);
 
-  const [randomOrderNumber, setRandomOrderNumber] = useState('');
-
   useEffect(() => {
-    setRandomOrderNumber(useRandomOrderNumber);
+    document
+      .getElementsByTagName('section')[0]
+      .scrollIntoView({ alignToTop: true });
   }, []);
 
   return (
@@ -41,7 +41,7 @@ const BasketCheckout = ({ basketItems }) => {
       <TestDiv>
         <OrderNumberContainer>
           <p>
-            Order #: <span>{randomOrderNumber}</span>
+            Order #: <span>{checkoutOrderNumber}</span>
           </p>
         </OrderNumberContainer>
         <BasketTotalContainer>
@@ -67,7 +67,7 @@ const BasketCheckout = ({ basketItems }) => {
 
 export default BasketCheckout;
 
-const Container = styled.div`
+const Container = styled.section`
   padding: 2rem;
   width: 40%;
   /* border: 1px solid black; */

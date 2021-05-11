@@ -1,78 +1,118 @@
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import CreditCardLogos from '../../images/shop/credit_cards.svg';
+import {
+  cardDayOptions,
+  cardMonthOptions,
+} from '../../data/Shop/cardSelectOptions';
+import { ShopContext } from '../../context/Shop/shopProvider';
 
 const PaymentSection = () => {
+  const { handleShowCheckoutModal, handleSubmitTransaction } =
+    useContext(ShopContext);
+
+  const [transactionInfo, setTransactionInfo] = useState({
+    nameOnCard: '',
+    postcode: '',
+  });
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    handleSubmitTransaction(transactionInfo);
+    handleShowCheckoutModal((prev) => !prev);
+  };
+
+  console.log(transactionInfo);
+
   return (
     <Main>
       <Heading>Payment Info.</Heading>
-      <TestDiv>
+      <PaymentForm onSubmit={handleFormSubmit}>
         <PersonalInfo>
-          <label>Name on card: </label>
-          <input type='text' autoComplete='cc-csc' />
-          <label>Address: </label>
-          <textarea cols='30' rows='4' autoComplete='none'></textarea>
-          <label>Postcode: </label>
-          <input type='text' autoComplete='cc-csc' />
-          <label>Contact number: </label>
-          <input type='text' autoComplete='cc-csc' />
+          <div>
+            <label>Name on card: </label>
+            <input
+              onChange={(e) =>
+                setTransactionInfo((prev) => {
+                  return {
+                    ...prev,
+                    nameOnCard: e.target.value,
+                  };
+                })
+              }
+              value={transactionInfo.nameOnCard}
+              style={{ border: 'none', background: '#eddff3' }}
+              type='text'
+              autoComplete='cc-csc'
+            />
+          </div>
+          <div>
+            <label>Address: </label>
+            <textarea
+              style={{ border: 'none', background: '#eddff3' }}
+              cols='25'
+              rows='3'
+              autoComplete='none'
+            ></textarea>
+          </div>
+          <div>
+            <label>Postcode: </label>
+            <input
+              onChange={(e) =>
+                setTransactionInfo((prev) => {
+                  return {
+                    ...prev,
+                    postcode: e.target.value,
+                  };
+                })
+              }
+              style={{ border: 'none', background: '#eddff3' }}
+              type='text'
+              autoComplete='cc-csc'
+            />
+          </div>
+          <div>
+            <label>Contact number: </label>
+            <input
+              style={{ border: 'none', background: '#eddff3' }}
+              type='text'
+              autoComplete='cc-csc'
+            />
+          </div>
         </PersonalInfo>
         <PaymentInfo>
           <TestDiv2>
             <label>Card number: </label>
-            <input type='text' autoComplete='cc-csc' maxLength='16' />
+            <input
+              type='text'
+              autoComplete='cc-csc'
+              maxLength='16'
+              style={{
+                width: '200px',
+                border: 'none',
+                background: '#eddff3',
+              }}
+            />
             <label>CVV:</label>
-            <input type='password' maxLength='3' />
+            <input
+              style={{ width: '50px', border: 'none', background: '#eddff3' }}
+              type='password'
+              maxLength='3'
+            />
           </TestDiv2>
           <TestDiv3>
             <label>Expiration date: </label>
-            <select>
-              <option>01</option>
-              <option>02</option>
-              <option>03</option>
-              <option>04</option>
-              <option>05</option>
-              <option>06</option>
-              <option>07</option>
-              <option>08</option>
-              <option>09</option>
-              <option>10</option>
-              <option>11</option>
-              <option>12</option>
-              <option>13</option>
-              <option>14</option>
-              <option>15</option>
-              <option>16</option>
-              <option>17</option>
-              <option>18</option>
-              <option>19</option>
-              <option>20</option>
-              <option>21</option>
-              <option>22</option>
-              <option>23</option>
-              <option>24</option>
-              <option>25</option>
-              <option>26</option>
-              <option>27</option>
-              <option>28</option>
-              <option>29</option>
-              <option>30</option>
-              <option>31</option>
+            <select style={{ border: 'none', background: '#eddff3' }}>
+              {cardDayOptions.map((day, index) => (
+                <option key={index}>{Number(day)}</option>
+              ))}
             </select>
-            <select>
-              <option>January</option>
-              <option>February</option>
-              <option>March</option>
-              <option>April</option>
-              <option>May</option>
-              <option>June</option>
-              <option>July</option>
-              <option>August</option>
-              <option>September</option>
-              <option>October</option>
-              <option>November</option>
-              <option>December</option>
+            <select style={{ border: 'none', background: '#eddff3' }}>
+              {cardMonthOptions.map((month, index) => (
+                <option key={index}>{month}</option>
+              ))}
             </select>
-            <select>
+            <select style={{ border: 'none', background: '#eddff3' }}>
               <option>2021</option>
               <option>2022</option>
               <option>2023</option>
@@ -80,8 +120,8 @@ const PaymentSection = () => {
           </TestDiv3>
         </PaymentInfo>
         <BuyButton>BUY NOW</BuyButton>
-        <PaymentLogos src={CreditCardLogos} alt='card logos' />
-      </TestDiv>
+      </PaymentForm>
+      <PaymentLogos src={CreditCardLogos} alt='card logos' />
     </Main>
   );
 };
@@ -89,7 +129,7 @@ const PaymentSection = () => {
 export default PaymentSection;
 
 const Main = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 700px;
   width: 40%;
   display: flex;
@@ -116,14 +156,18 @@ const Main = styled.div`
   }
 `;
 
-const TestDiv = styled.div`
-  height: 100%;
+const PaymentForm = styled.form`
   /* border: 1px solid black; */
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const Heading = styled.h1`
@@ -132,45 +176,87 @@ const Heading = styled.h1`
 
 const PaymentLogos = styled.img`
   width: 100px;
+  align-self: center;
 `;
 
 const PersonalInfo = styled.div`
-  /* padding: 2rem; */
-  height: 50%;
   /* border: 1px solid red; */
+  width: 60%;
+  /* padding: 2rem; */
+  height: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
+  input {
+    margin-left: 0.8rem;
+  }
+
+  div {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+  }
+
   textarea {
+    margin-left: 0.8rem;
     resize: none;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 90%;
   }
 `;
 
 const PaymentInfo = styled.div`
   /* border: 1px solid black; */
+  width: 80%;
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
-  height: 20%;
+  height: 30%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const TestDiv2 = styled.div`
+  /* border: 1px solid black; */
   display: flex;
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
 `;
 
 const TestDiv3 = styled.div`
   display: flex;
+  width: 100%;
+  justify-content: center;
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
+  label {
+    margin-right: 1rem;
   }
+
+  select {
+    &::-webkit-scrollbar-track {
+      /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); */
+      background-color: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--mainPurple);
+    }
+  }
+
   * {
     cursor: pointer;
   }
@@ -185,11 +271,13 @@ const BuyButton = styled.button`
   border: none;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.4s ease-in-out;
 
   &:hover {
     color: var(--mainPurple);
     background-color: #fff;
     border-radius: 0.5rem;
     outline: 1px solid var(--mainPurple);
+    transition: all 0.4s ease-in-out;
   }
 `;
