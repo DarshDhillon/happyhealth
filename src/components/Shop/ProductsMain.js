@@ -55,7 +55,7 @@ const ProductTitle = styled.h3`
 `;
 
 const ProductDescription = styled.p`
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 `;
 
 const ProductImage = styled.img`
