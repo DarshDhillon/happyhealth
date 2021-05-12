@@ -28,16 +28,18 @@ const ShopBasket = () => {
         {basketItems.map((item) => (
           <ItemsWrapper key={item.id}>
             <ItemThumbnail src={item.img} alt={item.alt} />
-            <ItemProductName>{item.productName}</ItemProductName>
+            <ItemProductName>
+              {item.productName.substr(0, 15)}...
+            </ItemProductName>
             <ItemProductQuantity>{item.quantity}</ItemProductQuantity>
-            <div>
+            <ButtonWrapper>
               <BasketButtonAdd onClick={() => handleAddOneItem(item)}>
                 +
               </BasketButtonAdd>
               <BasketButtonRemove onClick={() => handleRemoveOneItem(item)}>
                 -
               </BasketButtonRemove>
-            </div>
+            </ButtonWrapper>
             <ItemProductTotal>£{item.price * item.quantity}</ItemProductTotal>
           </ItemsWrapper>
         ))}
@@ -152,6 +154,11 @@ const ItemProductName = styled.p`
   @media screen and (max-width: 500px) {
     font-size: 1rem;
   }
+`;
+
+const ButtonWrapper = styled.div`
+  /* border: 1px solid red; */
+  /* justify-self: flex-end; */
 `;
 
 const ItemProductQuantity = styled.p`

@@ -1,7 +1,9 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ReactDOM from 'react-dom';
 import { ShopContext } from '../../context/Shop/shopProvider';
+import CheckoutGif from '../../images/shop/checkout_gif.gif';
+import TransactionComplete from './TransactionComplete';
 
 const CHECKOUT_ROOT = document.getElementById('checkout-modal-root');
 
@@ -9,15 +11,28 @@ const CheckoutModal = () => {
   const { showCheckoutModal, checkoutOrderNumber, transactionInfo } =
     useContext(ShopContext);
 
-  if (!showCheckoutModal) return null;
+  const [showAnimation, setShowAnimaion] = useState(false);
 
-  console.log(transactionInfo);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowAnimaion((prev) => !prev);
+    }, 3000);
+  }, [showCheckoutModal]);
+
+  if (!showCheckoutModal) return null;
 
   return ReactDOM.createPortal(
     <ModalContainer>
-      <h1>{checkoutOrderNumber}</h1>
-      <h1>{transactionInfo.postcode}</h1>
-      <h1>{transactionInfo.nameOnCard}</h1>
+      <ModalWrapper>
+        {showAnimation ? (
+          <Animation alt='checkout gif' src={CheckoutGif} />
+        ) : (
+          <TransactionComplete
+            checkoutOrderNumber={checkoutOrderNumber}
+            transactionInfo={transactionInfo}
+          />
+        )}
+      </ModalWrapper>
     </ModalContainer>,
     CHECKOUT_ROOT
   );
@@ -31,9 +46,33 @@ const ModalContainer = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-  h1 {
-    color: #fff;
+const ModalWrapper = styled.div`
+  border: 1px solid red;
+  height: 70%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    height: 90%;
+
+    width: 80%;
+  }
+`;
+
+const Animation = styled.img`
+  width: 500px;
+  border-radius: 0.5rem;
+
+  @media screen and (max-width: 500px) {
+    width: 300px;
   }
 `;

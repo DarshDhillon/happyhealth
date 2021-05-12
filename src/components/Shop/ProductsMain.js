@@ -30,7 +30,7 @@ const ProductsContainer = styled.div`
   width: 100%;
   padding: 1rem 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   row-gap: 3rem;
 `;
 
@@ -79,12 +79,13 @@ const BuyButton = styled.button`
   /* outline: none; */
   background-color: #fff;
   color: var(--mainPurple);
-  border: none;
+  border: 1px solid var(--mainPurple);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
   &:hover {
     background-color: lightgreen;
     transition: all 0.3s ease-in-out;
+    border: 1px solid lightgreen;
   }
 `;
