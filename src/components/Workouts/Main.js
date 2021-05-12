@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Main = ({ children }) => {
   return (
     <Container>
-      <TempDiv></TempDiv>
+      <ChildrenWrapper></ChildrenWrapper>
       {children}
     </Container>
   );
@@ -18,7 +18,7 @@ const Container = styled.main`
   background: linear-gradient(#e8f2f7, #f0e9f3);
 `;
 
-const TempDiv = styled.div`
+const ChildrenWrapper = styled.div`
   background-color: lightgreen;
   height: 700px;
 `;

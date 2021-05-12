@@ -11,6 +11,7 @@ import Workouts from './pages/Workouts';
 import Shop from './pages/Shop';
 import Contact from './pages/Contact.js';
 import Featured from './components/Featured/Featured';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path='/workouts' component={Workouts} />
           <Route path='/shop' exact component={Shop} />
           <Route path='/contact' component={Contact} />
+          <Route path='*' component={NotFound} />
         </Switch>
         <Featured />
         <Footer />

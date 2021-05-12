@@ -39,7 +39,7 @@ const TransactionComplete = ({ checkoutOrderNumber, transactionInfo }) => {
 export default TransactionComplete;
 
 const Container = styled.div`
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   height: 100%;
   width: 100%;
   padding: 2rem 2rem;

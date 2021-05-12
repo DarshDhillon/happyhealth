@@ -54,9 +54,9 @@ const ModalContainer = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 70%;
-  width: 70%;
+  width: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
