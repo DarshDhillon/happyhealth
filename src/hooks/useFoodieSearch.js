@@ -18,15 +18,21 @@ const initialState = {
 const useFoodieSearch = () => {
   const [state, dispatch] = useReducer(foodieReducer, initialState);
 
-  const fetchData = async (searchQuery) => {
+  const fetchData = async ({
+    searchTerm,
+    filterVeg,
+    filterLowFat,
+    filterHighProtein,
+  }) => {
     dispatch({ type: 'IS_LOADING' });
 
     await axios
       .get(
-        `https://api.edamam.com/search?q=${searchQuery}&app_id=${ID}&app_key=${KEY}&from=0&to=30`
+        `https://api.edamam.com/search?q=${searchTerm}&app_id=${ID}&app_key=${KEY}&from=0&to=30&${filterLowFat}&${filterVeg}&${filterHighProtein}`
       )
       .then(({ data }) => {
         dispatch({ type: 'FETCH_DATA', payload: data });
+        console.log(data);
       })
       .catch((error) => {
         console.error(error);

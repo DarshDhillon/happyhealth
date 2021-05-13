@@ -10,7 +10,7 @@ import { BsEye } from 'react-icons/bs';
 import { BsEyeSlash } from 'react-icons/bs';
 
 const PaymentSection = () => {
-  const { handleShowCheckoutModal, handleSubmitTransaction } =
+  const { handleShowCheckoutModal, handleSubmitTransaction, basketItems } =
     useContext(ShopContext);
 
   const [transactionInfo, setTransactionInfo] = useState({
@@ -22,6 +22,7 @@ const PaymentSection = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    if (basketItems.length === 0) return alert('Please add something first!');
     handleSubmitTransaction(transactionInfo);
     handleShowCheckoutModal((prev) => !prev);
   };

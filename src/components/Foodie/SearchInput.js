@@ -1,33 +1,45 @@
 import { useState, useRef, useContext } from 'react';
 import styled from 'styled-components';
 import { FoodieContext } from '../../context/Foodie/FoodieProvider';
+import FilterOptions from './FilterOptions';
 
 const SearchInput = () => {
-  const [inputState, setInputState] = useState('');
+  const [inputState, setInputState] = useState({
+    searchTerm: '',
+  });
   const inputRef = useRef();
   const { handleFetch } = useContext(FoodieContext);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     handleFetch(inputState);
-    setInputState('');
+    setInputState({ searchTerm: '' });
     inputRef.current.focus();
   };
 
   return (
     <Container>
       <Form onSubmit={handleFormSubmit}>
-        <Wrapper>
+        <FormWrapper>
           <FoodSearchInput
+            name='recipeSearch'
             required
             ref={inputRef}
-            value={inputState}
-            onChange={(e) => setInputState(e.target.value)}
+            value={inputState.searchTerm}
+            onChange={(e) =>
+              setInputState((prev) => ({ ...prev, searchTerm: e.target.value }))
+            }
             placeholder='search for recipes...'
             autoFocus
+            autoComplete='off'
           />
           <SearchButton>GO</SearchButton>
-        </Wrapper>
+        </FormWrapper>
+        <FilterOptions
+          setInputState={setInputState}
+          handleFetch={handleFetch}
+          inputState={inputState}
+        />
       </Form>
     </Container>
   );
@@ -36,22 +48,22 @@ const SearchInput = () => {
 export default SearchInput;
 
 const Container = styled.div`
+  /* border: 1px solid red; */
   display: flex;
   /* align-items: center; */
   justify-content: center;
   padding-top: 3rem;
   max-width: 80%;
   margin: 0 auto;
-  /* border: 1px solid red; */
 `;
 
-const Wrapper = styled.div`
+const FormWrapper = styled.div`
   display: flex;
 `;
 
 const Form = styled.form`
-  width: 50%;
   /* border: 1px solid black; */
+  width: 50%;
 
   /* @media screen and (max-width: 1100px) {
     width: 60%;

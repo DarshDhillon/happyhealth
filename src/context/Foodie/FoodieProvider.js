@@ -6,8 +6,8 @@ export const FoodieContext = createContext();
 const FoodieProvider = ({ children }) => {
   const [state, fetchData] = useFoodieSearch();
 
-  const handleFetch = (searchQuery) => {
-    fetchData(searchQuery);
+  const handleFetch = (search) => {
+    fetchData(search);
   };
 
   return (
