@@ -1,8 +1,7 @@
 // import { useState } from 'react';
 import styled from 'styled-components';
-// import { FiFilter } from 'react-icons/fi';
 
-const FilterOptions = ({ setInputState, handleFetch, inputState }) => {
+const FilterOptions = ({ setInputState, showFilterOptions }) => {
   // const [showSearchOptions, setShowSearchOptions] = useState(false);
 
   const handleFilterOptions = (e) => {
@@ -17,7 +16,7 @@ const FilterOptions = ({ setInputState, handleFetch, inputState }) => {
   };
 
   return (
-    <Container>
+    <Container showFilterOptions={showFilterOptions}>
       <SectionWrapper>
         {/* <FilterOptionsWrapper
           onClick={() => setShowSearchOptions((prev) => !prev)}
@@ -28,7 +27,9 @@ const FilterOptions = ({ setInputState, handleFetch, inputState }) => {
         </FilterOptionsWrapper> */}
         <Options>
           <OptionWrapper>
-            <label htmlFor='filterVeg'>Vegetarian:</label>
+            <label htmlFor='filterVeg'>Vegetarian</label>
+            {/* <ImCheckboxUnchecked />
+            <ImCheckboxChecked /> */}
             <input
               id='filterVeg'
               name='filterVeg'
@@ -38,7 +39,7 @@ const FilterOptions = ({ setInputState, handleFetch, inputState }) => {
             />
           </OptionWrapper>
           <OptionWrapper>
-            <label htmlFor='filterLowFat'>Low-fat:</label>
+            <label htmlFor='filterLowFat'>Low-fat</label>
             <input
               id='filterLowFat'
               name='filterLowFat'
@@ -48,7 +49,7 @@ const FilterOptions = ({ setInputState, handleFetch, inputState }) => {
             />
           </OptionWrapper>
           <OptionWrapper>
-            <label htmlFor='filterHighProtein'>High Protein:</label>
+            <label htmlFor='filterHighProtein'>High Protein</label>
             <input
               id='filterHighProtein'
               name='filterHighProtein'
@@ -69,10 +70,12 @@ const Container = styled.div`
   /* border: 1px solid red; */
   /* height: 200px; */
   /* background-color: #fff; */
+  opacity: ${({ showFilterOptions }) => (showFilterOptions ? '1' : '0')};
   /* opacity: 0; */
   width: 100%;
   padding: 0.8rem;
   border-radius: 0.2rem;
+  transition: all 0.3s ease-in-out;
   /* cursor: pointer; */
 
   /* @media screen and (max-width: 768px) {
@@ -124,9 +127,9 @@ const Options = styled.div`
 `;
 
 const OptionWrapper = styled.div`
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
   label {
     cursor: pointer;
     font-size: 1.2rem;
@@ -135,6 +138,23 @@ const OptionWrapper = styled.div`
     color: var(--mainPurple);
   }
   input {
+    height: 20px;
+    width: 20px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 1px solid var(--mainBlue);
+    border-radius: 4px;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: #fff;
     cursor: pointer;
+
+    :checked {
+      /* border: 1px solid #41b883; */
+      background-color: var(--mainBlue);
+    }
   }
 `;

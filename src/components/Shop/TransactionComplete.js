@@ -53,8 +53,12 @@ const Container = styled.div`
   h1 {
     font-size: 2rem;
     text-align: center;
+  }
 
-    @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
+    height: 80%;
+
+    h1 {
       font-size: 1.5rem;
     }
   }

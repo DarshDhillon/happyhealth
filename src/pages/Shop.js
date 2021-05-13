@@ -15,8 +15,8 @@ const Shop = () => {
         </BannerWrapper>
         <ShopBasket />
         <ProductsMain />
+        <Checkout />
       </Container>
-      <Checkout />
       <CheckoutModal />
     </ShopContextProvider>
   );
@@ -26,7 +26,7 @@ export default Shop;
 
 const Container = styled.div`
   /* border: 1px solid green; */
-  padding: 0 0 2rem 0;
+  /* padding: 0 0 2rem 0; */
   background: linear-gradient(#e8f2f7, #f0e9f3);
   display: flex;
   flex-direction: column;

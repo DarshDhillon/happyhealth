@@ -69,7 +69,7 @@ const ModalWrapper = styled.div`
 `;
 
 const Animation = styled.img`
-  width: 500px;
+  width: 700px;
   border-radius: 0.5rem;
 
   @media screen and (max-width: 500px) {

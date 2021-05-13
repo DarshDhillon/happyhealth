@@ -10,11 +10,19 @@ const SearchInput = () => {
   const inputRef = useRef();
   const { handleFetch } = useContext(FoodieContext);
 
+  const [showFilterOptions, setShowFilterOptions] = useState(false);
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     handleFetch(inputState);
     setInputState({ searchTerm: '' });
     inputRef.current.focus();
+    setShowFilterOptions((prev) => !prev);
+  };
+
+  const handleInputChange = (e) => {
+    setInputState((prev) => ({ ...prev, searchTerm: e.target.value }));
+    !showFilterOptions && setShowFilterOptions(true);
   };
 
   return (
@@ -26,9 +34,7 @@ const SearchInput = () => {
             required
             ref={inputRef}
             value={inputState.searchTerm}
-            onChange={(e) =>
-              setInputState((prev) => ({ ...prev, searchTerm: e.target.value }))
-            }
+            onChange={handleInputChange}
             placeholder='search for recipes...'
             autoFocus
             autoComplete='off'
@@ -37,8 +43,7 @@ const SearchInput = () => {
         </FormWrapper>
         <FilterOptions
           setInputState={setInputState}
-          handleFetch={handleFetch}
-          inputState={inputState}
+          showFilterOptions={showFilterOptions}
         />
       </Form>
     </Container>
