@@ -30,7 +30,7 @@ const App = () => {
           <Route path='/contact' component={Contact} />
           <Route path='*' component={NotFound} />
         </Switch>
-        <Featured />
+        {/* <Featured /> */}
         <Footer />
       </Router>
     </>
