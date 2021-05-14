@@ -3,12 +3,14 @@ import styled from 'styled-components';
 import BeachImage from '../../images/take5/meditate_beach.svg';
 import RainImage from '../../images/take5/meditate_raining.svg';
 import { ModalVideoContext } from '../../context/Take5/ModalVideoProvider';
+import { motion } from 'framer-motion';
+import { animationThree } from '../../animations/animationData';
 
 const Main = () => {
   const { handleChooseVideo } = useContext(ModalVideoContext);
 
   return (
-    <Container>
+    <Container initial='out' animate='end' exit='out' variants={animationThree}>
       <TextWrapper>
         <h1>
           better <span>mind</span>. better <span>you</span>
@@ -43,7 +45,7 @@ const Main = () => {
 
 export default Main;
 
-const Container = styled.main`
+const Container = styled(motion.main)`
   /* height: 100vh; */
   background: linear-gradient(#e8f2f7, #f0e9f3);
   padding: 4rem 0;

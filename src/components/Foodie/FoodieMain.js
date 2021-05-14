@@ -4,6 +4,8 @@ import SearchInput from './SearchInput';
 import { FoodieContext } from '../../context/Foodie/FoodieProvider';
 import FoodieCarousel from './FoodieCarousel';
 import ImageSection from './ImageSection';
+import { motion } from 'framer-motion';
+import { animationTwo } from '../../animations/animationData';
 
 const FoodieMain = () => {
   const { fetchedData } = useContext(FoodieContext);
@@ -11,7 +13,7 @@ const FoodieMain = () => {
   const { recipes } = fetchedData;
 
   return (
-    <Container>
+    <Container initial='out' animate='in' exit='out' variants={animationTwo}>
       <TextWrapper>
         <h1>
           <span>you</span> are what <span>you</span> eat
@@ -33,7 +35,7 @@ const FoodieMain = () => {
 
 export default FoodieMain;
 
-const Container = styled.main`
+const Container = styled(motion.main)`
   background: linear-gradient(#e8f2f7, #f0e9f3);
   padding: 4rem 0;
   /* border: 1px solid red; */

@@ -4,7 +4,7 @@ const NotFound = () => {
   return (
     <Container>
       <Heading>
-        Seems you're a little lost? Click our logo to head home..
+        Seems you've taken a wrong turn! Click our logo to head home...
       </Heading>
       <NotFoundImage
         src={require('./../images/notFound/notFound.svg').default}
