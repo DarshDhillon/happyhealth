@@ -1,25 +1,26 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { GiCrystalBars } from 'react-icons/gi';
-import { GiCutDiamond, GiRock } from 'react-icons/gi';
 import { IconContext } from 'react-icons/lib';
+import { ImPower } from 'react-icons/im';
+import { FaCog } from 'react-icons/fa';
+import { GiRock } from 'react-icons/gi';
 
 const ServicePlans = () => {
   const [blurOnHover, setBlurOnHover] = useState(false);
 
   return (
-    <IconContext.Provider value={{ color: '#a9b3c1', size: 64 }}>
+    <IconContext.Provider value={{ color: 'var(--mainPurple', size: '3rem' }}>
       <PricingSection>
         <PricingWrapper>
           <PricingHeading>Our Services:</PricingHeading>
           <PricingContainer>
-            <PricingCard blurOnHover={blurOnHover} to='#'>
+            <PricingCard $blur={blurOnHover} to='#'>
               <PricingCardInfo>
                 <PricingCardIcon>
-                  <GiRock />
+                  <FaCog />
                 </PricingCardIcon>
-                <PricingCardPlan>Starter</PricingCardPlan>
+                <PricingCardPlan>Core</PricingCardPlan>
                 <PricingCardCost>£7.99</PricingCardCost>
                 <PricingCardLength>per month</PricingCardLength>
                 <PricingCardFeatures>
@@ -38,9 +39,9 @@ const ServicePlans = () => {
             >
               <PricingCardInfo>
                 <PricingCardIcon>
-                  <GiCutDiamond />
+                  <ImPower />
                 </PricingCardIcon>
-                <PricingCardPlan main='true'>Diamond</PricingCardPlan>
+                <PricingCardPlan main='true'>Elite</PricingCardPlan>
                 <PricingCardCost>£19.99</PricingCardCost>
                 <PricingCardLength>per month</PricingCardLength>
                 <PricingCardFeatures>
@@ -51,12 +52,12 @@ const ServicePlans = () => {
                 <Button>Choose Plan</Button>
               </PricingCardInfo>
             </PricingCard>
-            <PricingCard blurOnHover={blurOnHover} to='#'>
+            <PricingCard $blur={blurOnHover} to='#'>
               <PricingCardInfo>
                 <PricingCardIcon>
-                  <GiCrystalBars />
+                  <GiRock />
                 </PricingCardIcon>
-                <PricingCardPlan>Gold</PricingCardPlan>
+                <PricingCardPlan>Advanced</PricingCardPlan>
                 <PricingCardCost>£12.99</PricingCardCost>
                 <PricingCardLength>per month</PricingCardLength>
                 <PricingCardFeatures>
@@ -76,7 +77,7 @@ const ServicePlans = () => {
 export default ServicePlans;
 
 const PricingSection = styled.div`
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 3rem 0;
   display: flex;
   flex-direction: column;
@@ -84,7 +85,7 @@ const PricingSection = styled.div`
 `;
 
 const PricingWrapper = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -99,14 +100,14 @@ const PricingWrapper = styled.div`
 `;
 
 const PricingHeading = styled.h1`
-  color: var(--mainPurple);
+  color: #000;
   font-size: 3rem;
   margin-bottom: 1.5rem;
   text-align: center;
 `;
 
 const PricingContainer = styled.div`
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,7 +123,7 @@ const PricingContainer = styled.div`
 const PricingCard = styled(Link)`
   /* border: 1px solid red; */
   /* background: #f8f8ff; */
-  background: black;
+  background: #f8f8ff;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 6px 20px rgba(56, 125, 255, 0.2);
   width: 350px;
@@ -134,11 +135,11 @@ const PricingCard = styled(Link)`
   }
 
   &:nth-child(odd) {
-    -webkit-filter: ${({ blurOnHover }) => (blurOnHover ? 'blur(5px)' : '0px')};
-    -moz-filter: ${({ blurOnHover }) => (blurOnHover ? 'blur(5px)' : '0px')};
-    -o-filter: ${({ blurOnHover }) => (blurOnHover ? 'blur(5px)' : '0px')};
-    -ms-filter: ${({ blurOnHover }) => (blurOnHover ? 'blur(5px)' : '0px')};
-    filter: ${({ blurOnHover }) => (blurOnHover ? 'blur(5px)' : '0px')};
+    -webkit-filter: ${({ $blur }) => ($blur ? 'blur(5px)' : '0px')};
+    -moz-filter: ${({ $blur }) => ($blur ? 'blur(5px)' : '0px')};
+    -o-filter: ${({ $blur }) => ($blur ? 'blur(5px)' : '0px')};
+    -ms-filter: ${({ $blur }) => ($blur ? 'blur(5px)' : '0px')};
+    filter: ${({ $blur }) => ($blur ? 'blur(5px)' : '0px')};
   }
 
   &:hover {
@@ -168,22 +169,26 @@ const PricingCardInfo = styled.div`
 
 const PricingCardIcon = styled.div`
   margin: 1.5rem 0;
+  /* color: var(--mainBlue); */
 `;
 
 const PricingCardPlan = styled.h3`
   margin-bottom: 5px;
   font-size: ${({ main }) => (main ? '2.5rem' : '2.3rem')};
-  color: ${({ main }) => (main ? 'var(--mainPurple)' : '#fff')};
+  color: var(--mainBlue);
+  /* color: ${({ main }) => (main ? 'var(--mainPurple)' : '#000')}; */
   font-style: ${({ main }) => (main ? 'italic' : 'normal')};
 `;
 
 const PricingCardCost = styled.h4`
   font-size: 1.4rem;
+  color: #000;
 `;
 
 const PricingCardLength = styled.p`
   font-size: 0.8rem;
   margin-bottom: 1.5rem;
+  color: gray;
 `;
 
 const PricingCardFeatures = styled.ul`
@@ -192,7 +197,7 @@ const PricingCardFeatures = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #a9b3c1;
+  color: #000;
 `;
 
 const PricingCardFeature = styled.li`
@@ -201,18 +206,19 @@ const PricingCardFeature = styled.li`
 
 const Button = styled.button`
   border-radius: 4px;
-  background: var(--mainBlue);
+  background: var(--mainPurple);
   white-space: nowrap;
   padding: 0.5rem 1.5rem;
   color: #fff;
   font-size: 1.2rem;
   outline: none;
-  border: none;
+  border: 1px solid var(--mainPurple);
   cursor: pointer;
 
   &:hover {
     transition: all 0.3s ease-in-out;
-    background: var(--mainPurple);
+    color: var(--mainPurple);
+    background: #fff;
   }
 
   @media screen and (max-width: 1200px) {

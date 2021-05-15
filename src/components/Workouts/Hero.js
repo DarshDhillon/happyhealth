@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import HeroBanner from '../../images/workouts/fitness_banner_2.jpg';
+import HeroBanner from '../../images/workouts/fitness_banner_transparent.png';
 
 const Hero = () => {
   return (
@@ -12,9 +12,11 @@ const Hero = () => {
 export default Hero;
 
 const BannerWrapper = styled.div`
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  display: flex;
 `;
 
 const Banner = styled.img`
-  width: 100%;
+  width: 65%;
+  margin: 0 auto;
 `;

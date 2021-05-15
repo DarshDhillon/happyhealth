@@ -70,6 +70,8 @@ const Container = styled.div`
   /* border: 1px solid red; */
   /* height: 200px; */
   /* background-color: #fff; */
+  visibility: ${({ showFilterOptions }) =>
+    showFilterOptions ? 'visible' : 'hidden'};
   opacity: ${({ showFilterOptions }) => (showFilterOptions ? '1' : '0')};
   /* opacity: 0; */
   width: 100%;

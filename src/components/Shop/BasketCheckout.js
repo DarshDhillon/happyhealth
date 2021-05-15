@@ -125,6 +125,9 @@ const PurchasesContainer = styled.div`
   &::-webkit-scrollbar-thumb {
     background-color: var(--mainPurple);
   }
+
+  scrollbar-color: var(--mainPurple) transparent;
+  scrollbar-width: thin;
 `;
 
 const Heading = styled.p`

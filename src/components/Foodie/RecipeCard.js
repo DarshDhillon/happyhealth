@@ -72,6 +72,7 @@ const Card = styled.div`
 
 const Front = styled.div`
   /* border: 1px solid red; */
+  transform: rotateY(0deg);
   display: flex;
   padding: 0.1rem;
   flex-direction: column;
@@ -130,6 +131,9 @@ const IngredientsContainer = styled.div`
   &::-webkit-scrollbar-thumb {
     background-color: var(--mainPurple);
   }
+
+  scrollbar-color: var(--mainPurple) transparent;
+  scrollbar-width: thin;
 
   h4 {
     color: var(--mainPurple);

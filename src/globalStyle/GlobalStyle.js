@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
 :root {
     --mainPurple: #824998;
     --mainBlue: #009fe3;
+    scrollbar-color: #ce92e6 transparent;
 }
 
 html {
@@ -18,6 +19,17 @@ html {
     font-family: 'Quicksand', sans-serif;
 
 }
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ce92e6;
+    border-radius: 0.5rem;
+}
+
+
 
 `;
 
