@@ -156,4 +156,8 @@ const LinkItem = styled(Link)`
   span {
     margin-right: 10px;
   }
+
+  @media screen and (max-width: 500px) {
+    font-size: 2.3rem;
+  }
 `;

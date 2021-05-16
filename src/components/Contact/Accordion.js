@@ -35,6 +35,7 @@ const Container = styled.div`
   padding: 1rem;
   border-radius: 0.2rem;
   cursor: pointer;
+  margin: 1rem;
 
   @media screen and (max-width: 768px) {
     width: 400px;
@@ -48,6 +49,15 @@ const Container = styled.div`
 const SectionWrapper = styled.div`
   /* display: flex; */
   /* border: 1px solid blue; */
+
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 const QuestionWrapper = styled.div`
@@ -56,16 +66,13 @@ const QuestionWrapper = styled.div`
   height: 20%;
   background-color: ${({ reverse }) =>
     reverse ? 'var(--mainPurple)' : 'var(--mainBlue)'};
-  /* margin: 0 auto; */
   border-radius: 0.5rem;
   margin: 1rem 0;
   /* text-align: center; */
   display: flex;
   justify-content: center;
-  /* border-bottom: 1px solid black; */
 
   p {
-    font-size: 1.5rem;
     color: #fff;
   }
 `;
@@ -73,8 +80,6 @@ const QuestionWrapper = styled.div`
 const AnswerWrapper = styled.div`
   max-height: ${({ showAnswer, id }) => (showAnswer === id ? '20%' : '0')};
   opacity: ${({ showAnswer, id }) => (showAnswer === id ? '1' : '0')};
-  /* overflow-y: hidden; */
-  /* background-color: var(--mainBlue); */
   margin: 0 auto;
   border-radius: 0.5rem;
   transition: all 0.4s ease-in-out;
@@ -82,7 +87,6 @@ const AnswerWrapper = styled.div`
   justify-content: center;
 
   p {
-    font-size: 1.5rem;
     color: #000;
   }
 `;

@@ -27,7 +27,11 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+  border: 1px solid red;
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding: 2rem 0;
+  flex-wrap: wrap;
+  /* margin: 0 auto; */
 `;

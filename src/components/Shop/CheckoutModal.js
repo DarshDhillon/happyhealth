@@ -14,9 +14,11 @@ const CheckoutModal = () => {
   const [showAnimation, setShowAnimaion] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setShowAnimaion((prev) => !prev);
     }, 3000);
+
+    return () => clearTimeout(timer);
   }, [showCheckoutModal]);
 
   if (!showCheckoutModal) return null;

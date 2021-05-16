@@ -33,6 +33,8 @@ export default Map;
 
 const MapContainer = styled.div`
   display: flex;
+  margin: 1rem;
+
   /* justify-content: center; */
   /* align-items: center; */
 

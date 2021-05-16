@@ -10,9 +10,8 @@ import { BiPauseCircle } from 'react-icons/bi';
 import { FiSettings } from 'react-icons/fi';
 
 const VideoControls = () => {
-  const { handleVideoToggle, videoRef, chosenVideo } = useContext(
-    ModalVideoContext
-  );
+  const { handleVideoToggle, videoRef, chosenVideo } =
+    useContext(ModalVideoContext);
 
   const [isVolume, setIsVolume] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -35,9 +34,11 @@ const VideoControls = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      showControls && setShowControls(false);
+    const timer = setTimeout(() => {
+      showControls && setShowControls((prev) => !prev);
     }, 9000);
+
+    return () => clearTimeout(timer);
   }, [showControls]);
 
   return (

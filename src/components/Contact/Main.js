@@ -10,27 +10,30 @@ const Main = () => {
       <ContactImage
         src={require('../../images/contact/contact_us.svg').default}
       />
-      <Address>
-        {' '}
-        <span>
-          <FaMapMarkerAlt />
-        </span>{' '}
-        Happy Health Ltd, Hornsey Road, London, N7 7AJ
-      </Address>
-      <Phone>
-        {' '}
-        <span>
-          <MdPhone />
-        </span>{' '}
-        0208 7654321
-      </Phone>
-      <Email>
-        {' '}
-        <span>
-          <MdEmail />
-        </span>{' '}
-        equiries@happy-health.uk
-      </Email>
+      <ContactInfoWrapper>
+        <AddressWrapper>
+          <Address>
+            <ContactIcon>
+              <FaMapMarkerAlt />
+            </ContactIcon>
+            Happy Health Ltd, Hornsey Road, London, N7 7AJ{' '}
+          </Address>
+        </AddressWrapper>
+        <ContactWrapper>
+          <Phone>
+            <ContactIcon>
+              <MdPhone />
+            </ContactIcon>
+            0208 7654321
+          </Phone>
+          <Email>
+            <ContactIcon>
+              <MdEmail />
+            </ContactIcon>
+            equiries@happy-health.uk
+          </Email>
+        </ContactWrapper>
+      </ContactInfoWrapper>
     </Container>
   );
 };
@@ -38,15 +41,17 @@ const Main = () => {
 export default Main;
 
 const Container = styled.div`
+  height: 80vh;
+  border: 1px solid black;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
-  padding: 4rem 2rem;
+  /* padding: 4rem 2rem; */
 `;
 
 const Heading = styled.h1`
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 3rem;
   color: var(--mainPurple);
   text-align: center;
@@ -56,18 +61,69 @@ const Heading = styled.h1`
   }
 `;
 
+const ContactInfoWrapper = styled.div`
+  min-width: 50%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border: 1px solid red;
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+  }
+
+  p {
+    text-align: center;
+    font-size: 2rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.3rem;
+    }
+
+    @media screen and (max-width: 500px) {
+      font-size: 1rem;
+    }
+  }
+`;
+
 const ContactImage = styled.img`
-  width: 35vw;
+  width: clamp(300px, 35vw, 600px);
 `;
 
-const Address = styled.p`
-  font-size: 2rem;
+const AddressWrapper = styled.div`
+  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+  /* flex-direction: column; */
 `;
 
-const Phone = styled.p`
-  font-size: 2rem;
+const ContactWrapper = styled.div`
+  border: 1px solid green;
+  width: 100%;
+  align-items: center;
+
+  justify-content: space-around;
+
+  display: flex;
 `;
 
-const Email = styled.p`
-  font-size: 2rem;
+const Address = styled.p``;
+
+const Phone = styled.p``;
+
+const Email = styled.p``;
+
+const ContactIcon = styled.i`
+  font-size: 1.8rem;
+  margin-right: 1rem;
+  color: var(--mainBlue);
+
+  @media screen and (max-width: 500px) {
+    font-size: 1rem;
+  }
 `;

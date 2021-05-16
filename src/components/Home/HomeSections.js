@@ -87,6 +87,10 @@ const SectionImage = styled.img`
   /* border: 1px solid black; */
   height: 350px;
   width: 350px;
+
+  @media screen and (max-width: 500px) {
+    max-width: 300px;
+  }
 `;
 
 const GoToIcon = styled(BsBoxArrowRight)`
