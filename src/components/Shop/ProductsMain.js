@@ -28,10 +28,11 @@ export default ProductsMain;
 const ProductsContainer = styled.div`
   /* border: 1px solid blue; */
   width: 100%;
-  padding: 1rem 3rem;
+  padding: 2rem 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  row-gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* row-gap: 3rem; */
+  gap: 3rem 2rem;
 `;
 
 const ProductWrapper = styled.div`
@@ -39,7 +40,7 @@ const ProductWrapper = styled.div`
   /* margin-bottom: 2rem; */
   margin: 0 auto;
   height: 400px;
-  width: 250px;
+  width: 280px;
   padding: 1rem;
   display: flex;
   flex-direction: column;

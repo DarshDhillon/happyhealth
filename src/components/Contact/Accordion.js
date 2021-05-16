@@ -28,9 +28,9 @@ const Accordion = () => {
 export default Accordion;
 
 const Container = styled.div`
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
   height: 400px;
-  background-color: #fff;
+  background: transparent;
   width: 600px;
   padding: 1rem;
   border-radius: 0.2rem;
@@ -85,7 +85,7 @@ const AnswerWrapper = styled.div`
   transition: all 0.4s ease-in-out;
   display: flex;
   justify-content: center;
-
+  background: #fff;
   p {
     color: #000;
   }

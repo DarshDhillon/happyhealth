@@ -44,7 +44,7 @@ const MapContainer = styled.div`
 `;
 
 const MapWrapper = styled.div`
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
   height: 400px;
   width: 600px;
   border-radius: 0.2rem;

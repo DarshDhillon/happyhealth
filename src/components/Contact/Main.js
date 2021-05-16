@@ -6,7 +6,7 @@ import { MdEmail } from 'react-icons/md';
 const Main = () => {
   return (
     <Container>
-      <Heading>Got a question? Let's talk..</Heading>
+      <Heading>Got a question? Get in touch..</Heading>
       <ContactImage
         src={require('../../images/contact/contact_us.svg').default}
       />
@@ -41,8 +41,8 @@ const Main = () => {
 export default Main;
 
 const Container = styled.div`
+  /* border: 1px solid black; */
   height: 80vh;
-  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -57,11 +57,12 @@ const Heading = styled.h1`
   text-align: center;
 
   @media screen and (max-width: 768px) {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 `;
 
 const ContactInfoWrapper = styled.div`
+  /* border: 1px solid red; */
   min-width: 50%;
   height: 150px;
   display: flex;
@@ -69,7 +70,6 @@ const ContactInfoWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  border: 1px solid red;
 
   @media screen and (max-width: 768px) {
     width: 80%;
@@ -90,11 +90,19 @@ const ContactInfoWrapper = styled.div`
 `;
 
 const ContactImage = styled.img`
-  width: clamp(300px, 35vw, 600px);
+  width: 700px;
+
+  @media screen and (max-width: 768px) {
+    width: 500px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 400px;
+  }
 `;
 
 const AddressWrapper = styled.div`
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   display: flex;
   align-items: center;
   width: 100%;
@@ -103,7 +111,7 @@ const AddressWrapper = styled.div`
 `;
 
 const ContactWrapper = styled.div`
-  border: 1px solid green;
+  /* border: 1px solid green; */
   width: 100%;
   align-items: center;
 

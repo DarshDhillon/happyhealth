@@ -23,11 +23,11 @@ const Container = styled.div`
   /* flex-wrap: wrap; */
   /* justify-content: space-around; */
   /* align-items: center; */
-  padding: 2rem;
+  padding: 1rem;
 `;
 
 const Wrapper = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   width: 100%;
   justify-content: space-evenly;
