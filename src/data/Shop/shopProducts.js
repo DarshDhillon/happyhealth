@@ -32,6 +32,16 @@ const shopProducts = [
   },
   {
     id: uuid(),
+    productName: `Sleeveless Training shirt`,
+    productDescription: `A super tight, uncomfortable ugly grey shirt to show off your 'guns'`,
+    price: 15,
+    quantity: 0,
+    img: require('../../images/shop/shopItems/sleeveless_training_grey.jpg')
+      .default,
+    alt: 'sleeveless training grey',
+  },
+  {
+    id: uuid(),
     productName: `Men's polo black`,
     productDescription:
       'Designed from a cotton piqué fabric which is durable, breathable and features a button placket, ribbed collar and cuffs',
@@ -167,7 +177,16 @@ const shopProducts = [
     price: 30,
     quantity: 0,
     img: require('../../images/shop/shopItems/golf_umbrella.jpg').default,
-    alt: 'football shorts white',
+    alt: 'golf umbrella',
+  },
+  {
+    id: uuid(),
+    productName: `Training headband`,
+    productDescription: `Keep your hair tucked back as you train (unless you're bald)`,
+    price: 10,
+    quantity: 0,
+    img: require('../../images/shop/shopItems/headband_training.jpg').default,
+    alt: 'training headband',
   },
 ];
 

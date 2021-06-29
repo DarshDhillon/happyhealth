@@ -52,7 +52,7 @@ const BasketCheckout = ({ basketItems }) => {
             </BasketSubTotal>
             <BasketShipping>
               <p>Delivery:</p>
-              <p>FREE!</p>
+              <p>FREE</p>
             </BasketShipping>
             <BasketTotalAmount>
               <h2>TOTAL:</h2>
@@ -140,6 +140,7 @@ const Heading = styled.p`
 `;
 
 const PurchaseWrapper = styled.div`
+  /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
   padding: 1rem 1.5rem;

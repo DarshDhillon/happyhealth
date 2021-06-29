@@ -32,7 +32,7 @@ const Container = styled.div`
   height: 400px;
   background: transparent;
   width: 600px;
-  padding: 1rem;
+  /* padding: 1rem; */
   border-radius: 0.2rem;
   cursor: pointer;
   margin: 1rem;
@@ -55,7 +55,7 @@ const SectionWrapper = styled.div`
     text-align: center;
 
     @media screen and (max-width: 768px) {
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
   }
 `;

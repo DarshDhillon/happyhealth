@@ -32,7 +32,6 @@ const useFoodieSearch = () => {
       )
       .then(({ data }) => {
         dispatch({ type: 'FETCH_DATA', payload: data });
-        console.log(data);
       })
       .catch((error) => {
         console.error(error);

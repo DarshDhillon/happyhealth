@@ -30,7 +30,9 @@ const Main = () => {
             <ContactIcon>
               <MdEmail />
             </ContactIcon>
-            equiries@happy-health.uk
+            <a href='mailto: enquiries@happy-health.uk'>
+              equiries@happy-health.uk
+            </a>
           </Email>
         </ContactWrapper>
       </ContactInfoWrapper>
@@ -120,11 +122,16 @@ const ContactWrapper = styled.div`
   display: flex;
 `;
 
+const Email = styled.p`
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+`;
+
 const Address = styled.p``;
 
 const Phone = styled.p``;
-
-const Email = styled.p``;
 
 const ContactIcon = styled.i`
   font-size: 1.8rem;

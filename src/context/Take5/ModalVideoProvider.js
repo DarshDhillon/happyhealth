@@ -45,24 +45,3 @@ const ModalVideoProvider = ({ children }) => {
 };
 
 export default ModalVideoProvider;
-
-// const handleVideoToggle = () => {
-//   setChosenVideo((prev) => {
-//     const video = prev.name === 'rain' ? 'beach' : 'rain';
-
-//     return {
-//       name: video,
-//       path: require(`../../videos/Take5/${video}.mp4`).default,
-//     };
-//   });
-// };
-
-// const handleImageClick = (e) => {
-//   setChosenVideo({
-//     name: e.target.name,
-//     path: require(`../../videos/Take5/${e.target.name}.mp4`).default,
-//     active: true
-//   });
-
-//   setShowModal(true);
-// };

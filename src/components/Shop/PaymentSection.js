@@ -273,6 +273,7 @@ const CardNumberWrapper = styled.div`
     font-size: 1.5rem;
     user-select: none;
     color: var(--mainBlue);
+    cursor: pointer;
   }
 
   input {

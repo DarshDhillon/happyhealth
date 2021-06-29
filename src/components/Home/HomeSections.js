@@ -14,7 +14,9 @@ const HomeSections = () => {
                 <h1>
                   {section.title}
                   <span>
-                    <GoToIcon />
+                    <i>
+                      <GoToIcon $reverse={section.reverse} />
+                    </i>
                   </span>
                 </h1>
                 <p>{section.description}</p>
@@ -58,7 +60,6 @@ const SectionDescription = styled.div`
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
-    /* text-align: ${({ reverse }) => (reverse ? 'right' : '')}; */
   }
 
   p {
@@ -73,12 +74,14 @@ const SectionDescription = styled.div`
 
   span {
     margin-left: 1rem;
-    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
   }
 
   &:hover {
     span {
-      visibility: visible;
+      opacity: 1;
+      transition: all 0.4s ease-in-out;
     }
   }
 `;
@@ -96,8 +99,9 @@ const SectionImage = styled.img`
 const GoToIcon = styled(BsBoxArrowRight)`
   height: 25px;
   width: 25px;
-  color: black;
-  /* cursor: pointer; */
+  font-weight: bold;
+  color: ${({ $reverse }) =>
+    $reverse ? 'var(--mainBlue)' : 'var(--mainPurple)'};
 `;
 
 const WrapperLink = styled(Link)`

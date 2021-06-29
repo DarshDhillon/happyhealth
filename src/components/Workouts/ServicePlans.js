@@ -21,12 +21,12 @@ const ServicePlans = () => {
                   <FaCog />
                 </PricingCardIcon>
                 <PricingCardPlan>Core</PricingCardPlan>
-                <PricingCardCost>£7.99</PricingCardCost>
+                <PricingCardCost>£4.99</PricingCardCost>
                 <PricingCardLength>per month</PricingCardLength>
                 <PricingCardFeatures>
-                  <PricingCardFeature>100 New Users</PricingCardFeature>
-                  <PricingCardFeature>£10,000 Budget</PricingCardFeature>
-                  <PricingCardFeature>Retargeting analytics</PricingCardFeature>
+                  <PricingCardFeature>Core Programme</PricingCardFeature>
+                  <PricingCardFeature>50 training videos</PricingCardFeature>
+                  <PricingCardFeature>Nutrition planner</PricingCardFeature>
                 </PricingCardFeatures>
                 <Button>Choose Plan</Button>
               </PricingCardInfo>
@@ -42,12 +42,14 @@ const ServicePlans = () => {
                   <ImPower />
                 </PricingCardIcon>
                 <PricingCardPlan main='true'>Elite</PricingCardPlan>
-                <PricingCardCost>£19.99</PricingCardCost>
+                <PricingCardCost>£12.99</PricingCardCost>
                 <PricingCardLength>per month</PricingCardLength>
                 <PricingCardFeatures>
-                  <PricingCardFeature>Unlimited Users</PricingCardFeature>
-                  <PricingCardFeature>Unlimited Budget</PricingCardFeature>
-                  <PricingCardFeature>24/7 Support</PricingCardFeature>
+                  <PricingCardFeature>Customised Programme</PricingCardFeature>
+                  <PricingCardFeature>
+                    Unlimited training videos
+                  </PricingCardFeature>
+                  <PricingCardFeature>1-on-1 video coaching</PricingCardFeature>
                 </PricingCardFeatures>
                 <Button>Choose Plan</Button>
               </PricingCardInfo>
@@ -58,12 +60,14 @@ const ServicePlans = () => {
                   <GiRock />
                 </PricingCardIcon>
                 <PricingCardPlan>Advanced</PricingCardPlan>
-                <PricingCardCost>£12.99</PricingCardCost>
+                <PricingCardCost>£7.99</PricingCardCost>
                 <PricingCardLength>per month</PricingCardLength>
                 <PricingCardFeatures>
-                  <PricingCardFeature>1000 New Users</PricingCardFeature>
-                  <PricingCardFeature>£50,000 Budget</PricingCardFeature>
-                  <PricingCardFeature>Lead Gen Analytics</PricingCardFeature>
+                  <PricingCardFeature>Core Programme</PricingCardFeature>
+                  <PricingCardFeature>
+                    Unlimited training videos
+                  </PricingCardFeature>
+                  <PricingCardFeature>Video coaching</PricingCardFeature>
                 </PricingCardFeatures>
                 <Button>Choose Plan</Button>
               </PricingCardInfo>
@@ -145,6 +149,7 @@ const PricingCard = styled(Link)`
   &:hover {
     transform: scale(1.05);
     transition: all 0.3s ease-in-out;
+    box-shadow: 0px 6px 20px rgba(56, 125, 255, 0.6);
   }
   @media screen and (max-width: 1200px) {
     width: 60%;

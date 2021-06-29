@@ -87,6 +87,7 @@ const FoodSearchInput = styled.input`
   border: none;
   border-radius: 0.5rem 0 0 0.5rem;
   background: #fcfcfc;
+  text-transform: lowercase;
 
   &::placeholder {
     font-weight: 400;

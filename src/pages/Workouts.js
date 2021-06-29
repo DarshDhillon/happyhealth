@@ -4,6 +4,7 @@ import Hero from '../components/Workouts/Hero';
 import ServicePlans from '../components/Workouts/ServicePlans';
 import { motion } from 'framer-motion';
 import { animationOne, transition } from '../animations/animationData';
+import Testimonials from '../components/Workouts/Testimonials';
 
 const Workouts = () => {
   return (
@@ -16,6 +17,7 @@ const Workouts = () => {
     >
       <Hero />
       <Sections />
+      {/* <Testimonials /> */}
       <ServicePlans />
     </Container>
   );
