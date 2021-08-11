@@ -158,6 +158,6 @@ const LinkItem = styled(Link)`
   }
 
   @media screen and (max-width: 500px) {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
 `;

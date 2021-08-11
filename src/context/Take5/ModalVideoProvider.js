@@ -2,7 +2,7 @@ import { createContext, useState, useRef } from 'react';
 export const ModalVideoContext = createContext();
 
 const ModalVideoProvider = ({ children }) => {
-  const videoRef = useRef();
+  const videoRef = useRef(null);
 
   const [showModal, setShowModal] = useState(false);
 

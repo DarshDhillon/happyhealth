@@ -18,6 +18,9 @@ const Navbar = () => {
             take5
           </ListItem>
           <ListItem to='/shop'>shop</ListItem>
+          <ListItem primary='true' to='/contact'>
+            contact
+          </ListItem>
         </ListItems>
       </NavContainer>
     </Nav>
@@ -27,22 +30,16 @@ const Navbar = () => {
 export default Navbar;
 
 const Nav = styled.nav`
-  /* height: 320px; */
-  /* width: 100vw; */
   padding: 2.5rem;
   background-color: #fff;
-  /* border: 1px solid blue; */
 `;
 
 const NavContainer = styled.div`
-  /* height: 100%; */
   width: 100%;
-  /* max-width: 70%; */
   display: flex;
   padding: 0 2rem;
   justify-content: space-around;
   align-items: center;
-  /* border: 1px solid red; */
 
   @media screen and (max-width: 1100px) {
     flex-direction: column;
@@ -85,7 +82,7 @@ const ListItems = styled.ul`
 const ListItem = styled(Link)`
   text-decoration: none;
   font-size: 2rem;
-  margin-left: 3.5rem;
+  margin-left: 3rem;
   font-weight: 600;
   color: ${({ primary }) =>
     primary ? 'var(--mainPurple)' : 'var(--mainBlue)'};

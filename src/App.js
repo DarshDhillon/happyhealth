@@ -23,14 +23,14 @@ const App = () => {
         <DropMenu />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/foodie' component={Foodie} />
-          <Route path='/take5' component={Take5} />
-          <Route path='/workouts' component={Workouts} />
+          <Route path='/foodie' exact component={Foodie} />
+          <Route path='/take5' exact component={Take5} />
+          <Route path='/workouts' exact component={Workouts} />
           <Route path='/shop' exact component={Shop} />
-          <Route path='/contact' component={Contact} />
+          <Route path='/contact' exact component={Contact} />
           <Route path='*' component={NotFound} />
         </Switch>
-        {/* <Featured /> */}
+        <Featured />
         <Footer />
       </Router>
     </>

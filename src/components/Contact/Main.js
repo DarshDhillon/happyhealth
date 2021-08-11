@@ -30,9 +30,7 @@ const Main = () => {
             <ContactIcon>
               <MdEmail />
             </ContactIcon>
-            <a href='mailto: enquiries@happy-health.uk'>
-              equiries@happy-health.uk
-            </a>
+            <a href='mailto: enquiries@happy-health.uk'>Drop us an email</a>
           </Email>
         </ContactWrapper>
       </ContactInfoWrapper>

@@ -6,8 +6,8 @@ import { InView } from 'react-intersection-observer';
 const Sections = () => {
   return (
     <>
-      {SectionData.map((item, index) => (
-        <InView key={index} threshold={0.8}>
+      {SectionData.map((item) => (
+        <InView key={item.id} threshold={0.8}>
           {({ ref, inView }) => (
             <Section key={item.id} reverse={item.reverse}>
               <TextWrapper>

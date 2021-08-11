@@ -1,61 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-const calcDynamicHeight = (objectWidth) => {
-  const vw = window.innerWidth;
-  const vh = window.innerHeight;
-  return objectWidth - vw + vh + 150;
-};
-
-const handleDynamicHeight = (ref, setDynamicHeight) => {
-  const objectWidth = ref.current.scrollWidth;
-  const dynamicHeight = calcDynamicHeight(objectWidth);
-  setDynamicHeight(dynamicHeight);
-};
-
-const applyScrollListener = (ref, setTranslateX) => {
-  const something = () => {
-    const offsetTop = -ref.current.offsetTop;
-    setTranslateX(offsetTop);
-  };
-
-  window.addEventListener('scroll', something);
-};
-
-const HorizontalScroll = ({ children }) => {
-  const [dynamicHeight, setDynamicHeight] = useState(null);
-  const [translateX, setTranslateX] = useState(0);
-
-  const containerRef = useRef(null);
-  const objectRef = useRef(null);
-
-  const resizeHandler = () => {
-    handleDynamicHeight(objectRef, setDynamicHeight);
-  };
-
-  useEffect(() => {
-    handleDynamicHeight(objectRef, setDynamicHeight);
-    window.addEventListener('resize', resizeHandler);
-    applyScrollListener(containerRef, setTranslateX);
-
-    return () => {
-      window.removeEventListener('resize', resizeHandler);
-    };
-  }, []);
-
-  return (
-    <TallOuterContainer dynamicHeight={dynamicHeight}>
-      <StickyInnerContainer ref={containerRef}>
-        <HorizontalTranslateContainer translateX={translateX} ref={objectRef}>
-          {children}
-        </HorizontalTranslateContainer>
-      </StickyInnerContainer>
-    </TallOuterContainer>
-  );
-};
-
-export default HorizontalScroll;
-
 const TallOuterContainer = styled.div.attrs(({ dynamicHeight }) => ({
   style: { height: `${dynamicHeight}px` },
 }))`
@@ -78,3 +23,50 @@ const HorizontalTranslateContainer = styled.div.attrs(({ translateX }) => ({
   height: 100%;
   will-change: transform;
 `;
+
+const calcDynamicHeight = (objectWidth) => {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  return objectWidth - vw + vh + 150;
+};
+
+const handleDynamicHeight = (ref, setDynamicHeight) => {
+  const objectWidth = ref.current.scrollWidth;
+  const dynamicHeight = calcDynamicHeight(objectWidth);
+  setDynamicHeight(dynamicHeight);
+};
+
+const applyScrollListener = (ref, setTranslateX) => {
+  window.addEventListener('scroll', () => {
+    const offsetTop = -ref.current.offsetTop;
+    setTranslateX(offsetTop);
+  });
+};
+
+export default ({ children }) => {
+  const [dynamicHeight, setDynamicHeight] = useState(null);
+  const [translateX, setTranslateX] = useState(0);
+
+  const containerRef = useRef(null);
+  const objectRef = useRef(null);
+
+  const resizeHandler = () => {
+    handleDynamicHeight(objectRef, setDynamicHeight);
+  };
+
+  useEffect(() => {
+    handleDynamicHeight(objectRef, setDynamicHeight);
+    window.addEventListener('resize', resizeHandler);
+    applyScrollListener(containerRef, setTranslateX);
+  }, []);
+
+  return (
+    <TallOuterContainer dynamicHeight={dynamicHeight}>
+      <StickyInnerContainer ref={containerRef}>
+        <HorizontalTranslateContainer translateX={translateX} ref={objectRef}>
+          {children}
+        </HorizontalTranslateContainer>
+      </StickyInnerContainer>
+    </TallOuterContainer>
+  );
+};

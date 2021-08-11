@@ -163,7 +163,7 @@ const shopProducts = [
   {
     id: uuid(),
     productName: `Football shorts white`,
-    productDescription: `There's a small change I pinched these images and added my own logo onto them`,
+    productDescription: `There's a small chance I pinched these images and added my own logo onto them`,
     price: 25,
     quantity: 0,
     img: require('../../images/shop/shopItems/football_shorts_white.jpg')

@@ -66,7 +66,7 @@ const ProductImage = styled.img`
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.8);
+    transform: scale(1.3);
     transition: all 0.3s ease-in-out;
   }
 `;

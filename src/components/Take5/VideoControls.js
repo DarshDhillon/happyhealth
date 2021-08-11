@@ -18,9 +18,7 @@ const VideoControls = () => {
   const [showControls, setShowControls] = useState(false);
 
   const handleMute = () => {
-    videoRef.current.muted
-      ? (videoRef.current.muted = false)
-      : (videoRef.current.muted = true);
+    videoRef.current.muted = !videoRef.current.muted;
 
     setIsVolume((prev) => !prev);
   };
