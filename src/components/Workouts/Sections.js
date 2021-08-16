@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import SectionData from '../../data/Workouts/SectionData';
+import sectionData from '../../data/Workouts/sectionData';
 import { motion } from 'framer-motion';
 import { InView } from 'react-intersection-observer';
 
 const Sections = () => {
   return (
     <>
-      {SectionData.map((item) => (
+      {sectionData.map((item) => (
         <InView key={item.id} threshold={0.8}>
           {({ ref, inView }) => (
             <Section key={item.id} reverse={item.reverse}>

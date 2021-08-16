@@ -19,12 +19,17 @@ const FoodieMain = () => {
           <span>you</span> are what <span>you</span> eat
         </h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-          quibusdam id qui placeat deleniti iusto dolor voluptatem, autem
-          dolores sit quaerat harum veniam et cumque quo eum error asperiores ut
-          dicta architecto nobis blanditiis tempore! Reiciendis excepturi nulla
-          animi praesentium amet alias, hic veritatis ab error quas, laudantium
-          enim magni.
+          Eating healthy is not just about losing weight, it’s about feeling
+          better both physically and mentally. Eating healthy is about balance
+          and making sure that your body is getting the necessary nutrients it
+          needs to function properly. Healthy eating habits require that people
+          eat fruits, vegetables, whole grains, fats, proteins, and starches.
+        </p>
+        <p>
+          Keep in mind that healthy eating requires that you’re mindful of what
+          you eat and drink, but also how you prepare it. For best results,
+          individuals should avoid fried or processed foods, as well as foods
+          high in added sugars and salts.
         </p>
       </TextWrapper>
       <SearchInput />

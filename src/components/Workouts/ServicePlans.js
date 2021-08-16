@@ -13,7 +13,7 @@ const ServicePlans = () => {
     <IconContext.Provider value={{ color: 'var(--mainPurple', size: '3rem' }}>
       <PricingSection>
         <PricingWrapper>
-          <PricingHeading>Our Services:</PricingHeading>
+          <PricingHeading>Our personal training plans:</PricingHeading>
           <PricingContainer>
             <PricingCard $blur={blurOnHover} to='#'>
               <PricingCardInfo>
@@ -82,6 +82,7 @@ export default ServicePlans;
 
 const PricingSection = styled.div`
   /* border: 1px solid black; */
+  margin-top: 8rem;
   padding: 3rem 0;
   display: flex;
   flex-direction: column;
@@ -108,6 +109,10 @@ const PricingHeading = styled.h1`
   font-size: 3rem;
   margin-bottom: 1.5rem;
   text-align: center;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const PricingContainer = styled.div`

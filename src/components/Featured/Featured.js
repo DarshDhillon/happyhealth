@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Slide } from 'react-slideshow-image';
-import FeaturedData from '../../data/Featured/FeaturedData';
+import featuredData from '../../data/Featured/featuredData';
 import 'react-slideshow-image/dist/styles.css';
 
 const Featured = () => {
@@ -13,7 +13,7 @@ const Featured = () => {
         pauseOnHover={false}
         canSwipe={false}
       >
-        {FeaturedData.map((item) => (
+        {featuredData.map((item) => (
           <ImgWrapper key={item.id}>
             <Image src={item.img} />
           </ImgWrapper>

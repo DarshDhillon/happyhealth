@@ -19,11 +19,11 @@ const Footer = () => {
       <FooterWrapper>
         <FooterLinks>
           <FooterLink hover='true' to='/'>
-            This does something
+            Check Order Status
           </FooterLink>
-          <FooterLink to='/'>I go somwhere</FooterLink>
+          <FooterLink to='/'>Customer Service</FooterLink>
           <FooterLink hover='true' to='/'>
-            This does something
+            happyhealth Careers
           </FooterLink>
         </FooterLinks>
         <FooterLogo
@@ -32,11 +32,11 @@ const Footer = () => {
           alt='logo-no-text'
         />
         <FooterLinks>
-          <FooterLink to='/'>This does something</FooterLink>
+          <FooterLink to='/'>My Account</FooterLink>
           <FooterLink hover='true' to='/'>
-            I go somwhere
+            Returns/Exchanges
           </FooterLink>
-          <FooterLink to='/'>This does something</FooterLink>
+          <FooterLink to='/'>International Shipments</FooterLink>
         </FooterLinks>
       </FooterWrapper>
       <SocialWrapper>

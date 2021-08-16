@@ -1,36 +1,42 @@
 import styled from 'styled-components';
-import ShopBannerImg from '../../images/shop/123.jpg';
+import HeroVideo from '../../videos/Home/hero_vid.mp4';
 
-const ShopBanner = () => {
+const HeroMain = () => {
   return (
-    <BannerWrapper>
-      <Banner src={ShopBannerImg} alt='shop banner' />
+    <HeroContainer>
       <TextWrapper>
         <h1>
-          <span>shop</span> to your healthy <span>heart's </span>content
+          <span>build</span> yourself a <span>better </span>body
         </h1>
       </TextWrapper>
-    </BannerWrapper>
+      <VideoWrapper>
+        <HeroVid src={HeroVideo} muted loop />
+      </VideoWrapper>
+    </HeroContainer>
   );
 };
 
-export default ShopBanner;
+export default HeroMain;
 
-const BannerWrapper = styled.div`
-  margin-bottom: 3rem;
+const HeroContainer = styled.main`
+  background: #e8f2f7;
   width: 100%;
 `;
 
-const Banner = styled.img`
+const VideoWrapper = styled.div`
+  padding: 2rem 0;
+`;
+
+const HeroVid = styled.video`
+  height: 450px;
   width: 100%;
-  height: 300px;
-  object-fit: cover;
 `;
 
 const TextWrapper = styled.div`
-  /* border: 1px solid red; */
   text-align: center;
-  padding: 2rem 0;
+
+  /* border: 1px solid red; */
+  padding: 3rem 0;
   width: 60%;
   display: flex;
   flex-direction: column;

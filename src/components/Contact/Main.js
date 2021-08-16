@@ -6,7 +6,9 @@ import { MdEmail } from 'react-icons/md';
 const Main = () => {
   return (
     <Container>
-      <Heading>Got a question? Get in touch..</Heading>
+      <Heading>
+        Got a <span>question?</span> Get in <span>touch </span>
+      </Heading>
       <ContactImage
         src={require('../../images/contact/contact_us.svg').default}
       />
@@ -53,8 +55,16 @@ const Container = styled.div`
 const Heading = styled.h1`
   font-size: 3rem;
   margin-bottom: 3rem;
-  color: var(--mainPurple);
+  color: #000;
   text-align: center;
+
+  span {
+    color: var(--mainPurple);
+  }
+
+  span:nth-child(2) {
+    color: var(--mainBlue);
+  }
 
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;

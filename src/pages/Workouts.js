@@ -17,7 +17,7 @@ const Workouts = () => {
     >
       <Hero />
       <Sections />
-      {/* <Testimonials /> */}
+      <Testimonials />
       <ServicePlans />
     </Container>
   );

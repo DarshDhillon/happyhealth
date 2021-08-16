@@ -29,9 +29,10 @@ const TransactionComplete = ({ checkoutOrderNumber, transactionInfo }) => {
           {date.toLocaleDateString()}
         </span>
       </h1>
-      <Link to='/'>
+      <CloseLink to='/'>
         <Logo src={HHLogo} />
-      </Link>
+        CLOSE
+      </CloseLink>
     </Container>
   );
 };
@@ -41,7 +42,7 @@ export default TransactionComplete;
 const Container = styled.div`
   /* border: 1px solid blue; */
   height: 100%;
-  width: 100%;
+  width: 85%;
   padding: 2rem 2rem;
   background-color: #d9eef7;
   display: flex;
@@ -70,4 +71,11 @@ const Logo = styled.img`
   @media screen and (max-width: 768px) {
     width: 100px;
   }
+`;
+
+const CloseLink = styled(Link)`
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

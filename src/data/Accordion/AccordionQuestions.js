@@ -2,7 +2,7 @@ import { v4 as uuid } from 'uuid';
 
 const dayToday = new Intl.DateTimeFormat('en-UK', { weekday: 'long' }).format();
 
-const AccordionQuestions = [
+const accordionQuestions = [
   {
     id: uuid(),
     question: `What if my item doesn't turn up?`,
@@ -35,4 +35,4 @@ const AccordionQuestions = [
   },
 ];
 
-export default AccordionQuestions;
+export default accordionQuestions;

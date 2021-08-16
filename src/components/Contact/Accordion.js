@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import AccordionQuestions from '../../data/Accordion/AccordionQuestions';
+import accordionQuestions from '../../data/Accordion/accordionQuestions';
 
 const Accordion = () => {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -11,7 +11,7 @@ const Accordion = () => {
 
   return (
     <Container>
-      {AccordionQuestions.map((item) => (
+      {accordionQuestions.map((item) => (
         <SectionWrapper key={item.id} onClick={() => toggleAnswer(item.id)}>
           <QuestionWrapper reverse={item.reverse}>
             <p>{item.question}</p>

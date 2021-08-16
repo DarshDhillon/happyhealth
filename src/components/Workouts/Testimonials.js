@@ -1,39 +1,90 @@
+import HorizontalScroll from 'react-scroll-horizontal';
 import styled from 'styled-components';
-import HorizontalScroll from './HorizontalScroll';
-// import TestScroll from './TestScroll';
+import testimonialData from '../../data/Workouts/testimonialData';
 
 const Testimonials = () => {
   return (
-    <HorizontalScroll>
-      <CardsContainer>
-        <SampleCard></SampleCard>
-        <SampleCard></SampleCard>
-        <SampleCard></SampleCard>
-        <SampleCard></SampleCard>
-        <SampleCard></SampleCard>
-        <SampleCard></SampleCard>
-      </CardsContainer>
-    </HorizontalScroll>
+    <ScrollContainer>
+      <HorizontalScroll reverseScroll={true}>
+        {testimonialData.map((testimonial) => (
+          <InnerDiv key={testimonial.id}>
+            <TestimonialCard>
+              <TestimonialTextWrapper>
+                <TestimonialText>{testimonial.testimonialText}</TestimonialText>
+              </TestimonialTextWrapper>
+              <CharImg src={testimonial.testimonialImage} />
+              <CharName>{testimonial.testimonialPerson}</CharName>
+            </TestimonialCard>
+          </InnerDiv>
+        ))}
+      </HorizontalScroll>
+    </ScrollContainer>
   );
 };
 
 export default Testimonials;
 
-const CardsContainer = styled.div`
-  position: relative;
-  height: 100%;
-  padding: 0 0 0 150px;
+const ScrollContainer = styled.div`
+  margin-top: 10rem;
+  border: 3px var(--mainPurple);
+  border-style: solid none;
+  padding: 2rem 0;
+  height: 400px;
+  width: 100%;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 `;
 
-const SampleCard = styled.div`
-  position: relative;
-  height: 300px;
-  width: 700px;
-  background-color: #111f30;
-  margin-right: 75px;
-  flex-shrink: 0;
+const InnerDiv = styled.div`
+  /* border: 1px solid red; */
+  cursor: col-resize;
+  width: 50vw;
+  height: 100%;
+  /* background-color: pink; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 1300px) {
+    width: 75vw;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 100vw;
+  }
+`;
+
+const TestimonialCard = styled.div`
+  /* border: 1px solid black; */
+  background-color: var(--mainBlue);
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const TestimonialTextWrapper = styled.div`
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0 2rem;
+`;
+
+const TestimonialText = styled.p`
+  font-style: italic;
+  color: #fff;
+`;
+
+const CharImg = styled.img`
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+`;
+
+const CharName = styled.p`
+  /* color: var(--mainPurple); */
+  font-size: 1.2rem;
+  font-weight: bold;
 `;

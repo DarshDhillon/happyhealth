@@ -22,7 +22,8 @@ const PaymentSection = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (basketItems.length === 0) return alert('Please add something first!');
+    if (basketItems.length === 0)
+      return alert('Please add a basket item first!');
     handleSubmitTransaction(transactionInfo);
     handleShowCheckoutModal((prev) => !prev);
   };
@@ -188,7 +189,7 @@ const PaymentForm = styled.form`
   }
 `;
 
-const Heading = styled.h1`
+const Heading = styled.h2`
   text-align: center;
 `;
 

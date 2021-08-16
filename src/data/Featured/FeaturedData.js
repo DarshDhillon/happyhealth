@@ -7,7 +7,7 @@ import WomensHealth from '../../images/featured/womens_health.png';
 import CyclingWeekly from '../../images/featured/cycling_weekly.png';
 import { v4 as uuid } from 'uuid';
 
-const FeaturedData = [
+const featuredData = [
   {
     img: WomensHealth,
     id: uuid(),
@@ -40,4 +40,4 @@ const FeaturedData = [
   },
 ];
 
-export default FeaturedData;
+export default featuredData;

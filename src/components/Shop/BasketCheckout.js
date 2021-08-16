@@ -90,7 +90,7 @@ const Container = styled.section`
   }
 `;
 
-const BasketHeading = styled.h1`
+const BasketHeading = styled.h2`
   margin-bottom: 1rem;
 `;
 

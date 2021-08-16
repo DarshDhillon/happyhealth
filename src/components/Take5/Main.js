@@ -16,12 +16,15 @@ const Main = () => {
           better <span>mind</span>. better <span>you</span>
         </h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-          quibusdam id qui placeat deleniti iusto dolor voluptatem, autem
-          dolores sit quaerat harum veniam et cumque quo eum error asperiores ut
-          dicta architecto nobis blanditiis tempore! Reiciendis excepturi nulla
-          animi praesentium amet alias, hic veritatis ab error quas, laudantium
-          enim magni.
+          As we continue to navigate a new version of reality in our daily
+          lives, it remains so important to nourish and nurture our body, mind
+          and soul. Even in normal life many of us will experience some form of
+          stress or anxiety – it’s part of the journey and our personal growth.
+        </p>
+        <p>
+          There are, of course, many ways and means for managing this, and one
+          that can have a profound effect on your mental, physical, and
+          emotional wellbeing is meditation. So...
         </p>
         <h3>Take5 and relax...</h3>
       </TextWrapper>

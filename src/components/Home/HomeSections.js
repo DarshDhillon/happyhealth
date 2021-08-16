@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import HomePageData from '../../data/HomepageSections/HomePageSections';
+import homePageData from '../../data/HomepageSections/homePageSections';
 import { BsBoxArrowRight } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 const HomeSections = () => {
   return (
     <>
-      {HomePageData.map((section) => (
+      {homePageData.map((section) => (
         <SectionContainer reverse={section.reverse} key={section.id}>
           <WrapperLink to={section.to}>
             <SectionWrapper reverse={section.reverse}>
