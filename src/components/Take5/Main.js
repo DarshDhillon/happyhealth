@@ -26,7 +26,7 @@ const Main = () => {
           that can have a profound effect on your mental, physical, and
           emotional wellbeing is meditation. So...
         </p>
-        <h3>Take5 and relax...</h3>
+        <h3>take5 and relax...</h3>
       </TextWrapper>
       <ImageContainer>
         <Image
@@ -88,11 +88,16 @@ const TextWrapper = styled.div`
     font-size: 1.3rem;
     text-align: center;
     padding: 1rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 
   h3 {
     font-size: 2rem;
     padding: 1rem;
+    text-align: center;
   }
 `;
 

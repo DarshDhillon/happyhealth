@@ -6,7 +6,7 @@ const HeroMain = () => {
     <HeroContainer>
       <TextWrapper>
         <h1>
-          <span>build</span> yourself a <span>better </span>body
+          <span>just</span> what the <span>doctor </span>ordered
         </h1>
       </TextWrapper>
       <VideoWrapper>

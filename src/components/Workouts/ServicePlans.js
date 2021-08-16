@@ -107,7 +107,7 @@ const PricingWrapper = styled.div`
 const PricingHeading = styled.h1`
   color: #000;
   font-size: 3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
   text-align: center;
 
   @media screen and (max-width: 500px) {

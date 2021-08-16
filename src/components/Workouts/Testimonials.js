@@ -59,7 +59,7 @@ const TestimonialCard = styled.div`
   /* border: 1px solid black; */
   background-color: var(--mainBlue);
   height: 100%;
-  width: 50%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -70,17 +70,28 @@ const TestimonialTextWrapper = styled.div`
   font-size: 1.5rem;
   text-align: center;
   padding: 0 2rem;
+  width: 80%;
 `;
 
 const TestimonialText = styled.p`
   font-style: italic;
   color: #fff;
+  font-weight: bolder;
+
+  @media screen and (max-width: 800px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const CharImg = styled.img`
   border-radius: 50%;
   height: 120px;
   width: 120px;
+
+  @media screen and (max-width: 500px) {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 const CharName = styled.p`

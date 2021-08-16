@@ -81,5 +81,9 @@ const TextWrapper = styled.div`
     font-size: 1.3rem;
     text-align: center;
     padding: 1rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 `;

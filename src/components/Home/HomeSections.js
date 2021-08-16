@@ -33,19 +33,24 @@ const HomeSections = () => {
 export default HomeSections;
 
 const SectionContainer = styled.section`
+  /* border: 1px solid red; */
   background-color: ${({ reverse }) => (reverse ? '#e8f2f7' : '#f0e9f3')};
   /* display: flex; */
   padding: 2rem;
 `;
 
 const SectionWrapper = styled.div`
-  max-width: 80%;
+  /* border: 1px solid black; */
+  width: 80%;
   margin: 0 auto;
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
   align-items: center;
   justify-content: space-around;
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -53,18 +58,36 @@ const SectionWrapper = styled.div`
 `;
 
 const SectionDescription = styled.div`
-  max-width: 40%;
   /* border: 1px solid blue; */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+
+  @media screen and (max-width: 768px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
 
   h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
+    text-align: center;
   }
 
   p {
     font-size: 1.5rem;
     font-weight: 400;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 
   @media screen and (max-width: 768px) {
