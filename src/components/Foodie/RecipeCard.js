@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import FlipImg from '../../images/foodie/flip.png';
 import { v4 as uuid } from 'uuid';
+import PropTypes from 'prop-types';
 
 const Recipecard = ({ item }) => {
   const [flip, setFlip] = useState(false);
@@ -28,6 +29,10 @@ const Recipecard = ({ item }) => {
       </Back>
     </Card>
   );
+};
+
+Recipecard.propTypes = {
+  item: PropTypes.object,
 };
 
 export default Recipecard;

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { ModalVideoContext } from '../../context/Take5/ModalVideoProvider';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import VideoControls from './VideoControls';
+import PropTypes from 'prop-types';
 
 const ROOT = document.getElementById('take5-modal-root');
 
@@ -24,6 +25,10 @@ const VideoModal = ({ children }) => {
     </ModalContainer>,
     ROOT
   );
+};
+
+VideoModal.propTypes = {
+  children: PropTypes.node,
 };
 
 export default VideoModal;

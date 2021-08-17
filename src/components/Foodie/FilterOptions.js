@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const FilterOptions = ({ setInputState, showFilterOptions }) => {
   const handleFilterOptions = (e) => {
@@ -50,6 +51,11 @@ const FilterOptions = ({ setInputState, showFilterOptions }) => {
       </SectionWrapper>
     </Container>
   );
+};
+
+FilterOptions.propTypes = {
+  setInputState: PropTypes.func,
+  showFilterOptions: PropTypes.bool,
 };
 
 export default FilterOptions;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import HHLogo from '../../images/logos/hh_no_background.png';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const TransactionComplete = ({ checkoutOrderNumber, transactionInfo }) => {
   const date = new Date();
@@ -35,6 +36,11 @@ const TransactionComplete = ({ checkoutOrderNumber, transactionInfo }) => {
       </CloseLink>
     </Container>
   );
+};
+
+TransactionComplete.propTypes = {
+  checkoutOrderNumber: PropTypes.string,
+  transactionInfo: PropTypes.object,
 };
 
 export default TransactionComplete;

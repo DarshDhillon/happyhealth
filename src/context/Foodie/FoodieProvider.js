@@ -1,5 +1,6 @@
 import { createContext } from 'react';
 import useFoodieSearch from '../../hooks/useFoodieSearch';
+import PropTypes from 'prop-types';
 
 export const FoodieContext = createContext();
 
@@ -15,6 +16,10 @@ const FoodieProvider = ({ children }) => {
       {children}
     </FoodieContext.Provider>
   );
+};
+
+FoodieProvider.propTypes = {
+  children: PropTypes.node,
 };
 
 export default FoodieProvider;

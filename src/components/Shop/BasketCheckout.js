@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { ShopContext } from '../../context/Shop/shopProvider';
 import useBasketSaleTotal from '../../hooks/useBasketSaleTotal';
+import PropTypes from 'prop-types';
 
 const BasketCheckout = ({ basketItems }) => {
   const { handleAddOneItem, handleRemoveOneItem, checkoutOrderNumber } =
@@ -63,6 +64,10 @@ const BasketCheckout = ({ basketItems }) => {
       </OrderInfoContainer>
     </Container>
   );
+};
+
+BasketCheckout.propTypes = {
+  basketItems: PropTypes.array,
 };
 
 export default BasketCheckout;

@@ -1,6 +1,7 @@
 import { createContext, useReducer } from 'react';
 import shopReducer from './shopReducer';
 import shopProducts from '../../data/Shop/shopProducts';
+import PropTypes from 'prop-types';
 export const ShopContext = createContext();
 
 const ShopContextProvider = ({ children }) => {
@@ -66,6 +67,10 @@ const ShopContextProvider = ({ children }) => {
       {children}
     </ShopContext.Provider>
   );
+};
+
+ShopContextProvider.propTypes = {
+  children: PropTypes.node,
 };
 
 export default ShopContextProvider;

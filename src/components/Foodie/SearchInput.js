@@ -35,7 +35,7 @@ const SearchInput = () => {
             ref={inputRef}
             value={inputState.searchTerm}
             onChange={handleInputChange}
-            placeholder='search for recipes...'
+            placeholder='find your foodie..'
             autoFocus
             autoComplete='off'
           />

@@ -10,7 +10,7 @@ const HeroMain = () => {
         </h1>
       </TextWrapper>
       <VideoWrapper>
-        <HeroVid src={HeroVideo} muted loop />
+        <HeroVid src={HeroVideo} muted loop autoPlay />
       </VideoWrapper>
     </HeroContainer>
   );

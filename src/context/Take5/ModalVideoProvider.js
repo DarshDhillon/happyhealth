@@ -1,4 +1,5 @@
 import { createContext, useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 export const ModalVideoContext = createContext();
 
 const ModalVideoProvider = ({ children }) => {
@@ -42,6 +43,10 @@ const ModalVideoProvider = ({ children }) => {
       {children}
     </ModalVideoContext.Provider>
   );
+};
+
+ModalVideoProvider.propTypes = {
+  children: PropTypes.node,
 };
 
 export default ModalVideoProvider;

@@ -20,7 +20,7 @@ const homePageData = [
     id: uuid(),
     title: 'Eat better',
     description:
-      'Eating a healthy, well balanced diet is an important part of maintaining good health, and can help you feel your best. Use our free recipe search when deciding what to eat tonight!',
+      'Eating a healthy, well balanced diet is an important part of maintaining good health, and can help you feel your best. Use our free foodie search when deciding what to eat tonight!',
     image: FoodImg,
     alt: 'nutrition',
     reverse: true,
