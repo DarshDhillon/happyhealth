@@ -28,11 +28,9 @@ const Accordion = () => {
 export default Accordion;
 
 const Container = styled.div`
-  /* border: 1px solid grey; */
   height: 400px;
   background: transparent;
   width: 600px;
-  /* padding: 1rem; */
   border-radius: 0.2rem;
   cursor: pointer;
   margin: 1rem;
@@ -47,9 +45,6 @@ const Container = styled.div`
 `;
 
 const SectionWrapper = styled.div`
-  /* display: flex; */
-  /* border: 1px solid blue; */
-
   p {
     font-size: 1.5rem;
     text-align: center;
@@ -61,14 +56,12 @@ const SectionWrapper = styled.div`
 `;
 
 const QuestionWrapper = styled.div`
-  /* border: 1px solid white; */
   padding: 0.2rem 0;
   height: 20%;
   background-color: ${({ reverse }) =>
     reverse ? 'var(--mainPurple)' : 'var(--mainBlue)'};
   border-radius: 0.5rem;
   margin: 1rem 0;
-  /* text-align: center; */
   display: flex;
   justify-content: center;
 

@@ -42,7 +42,6 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* border: 1px solid black; */
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -51,8 +50,6 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  /* border: 1px solid black; */
-
   width: 350px;
 
   @media screen and (max-width: 768px) {
@@ -62,7 +59,6 @@ const Image = styled.img`
 `;
 
 const ErrorContainer = styled.div`
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

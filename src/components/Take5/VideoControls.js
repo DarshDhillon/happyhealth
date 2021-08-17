@@ -32,11 +32,11 @@ const VideoControls = () => {
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const showControlsTimer = setTimeout(() => {
       showControls && setShowControls((prev) => !prev);
     }, 9000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(showControlsTimer);
   }, [showControls]);
 
   return (
@@ -68,7 +68,6 @@ const ControlsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 40%;
-  /* border: 1px solid red; */
   transform: ${({ showControls }) =>
     showControls ? 'translateY(0)' : 'translateY(100%)'};
   transition: all 0.5s ease-in-out;
@@ -101,19 +100,16 @@ const ControlButton = styled(FiSettings)`
 `;
 
 const VolumeWrapper = styled.div`
-  /* border: 1px solid blue; */
   display: flex;
   justify-content: center;
 `;
 
 const PlayPauseWrapper = styled.div`
-  /* border: 1px solid black; */
   display: flex;
   justify-content: center;
 `;
 
 const VideoToggleWrapper = styled.div`
-  /* border: 1px solid green; */
   display: flex;
   justify-content: center;
 `;

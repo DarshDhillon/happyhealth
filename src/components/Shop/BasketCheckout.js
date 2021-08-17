@@ -38,7 +38,7 @@ const BasketCheckout = ({ basketItems }) => {
           </PurchaseWrapper>
         ))}
       </PurchasesContainer>
-      <TestDiv>
+      <OrderInfoContainer>
         <OrderNumberContainer>
           <p>
             Order #: <span>{checkoutOrderNumber}</span>
@@ -60,7 +60,7 @@ const BasketCheckout = ({ basketItems }) => {
             </BasketTotalAmount>
           </BasketTotalWrapper>
         </BasketTotalContainer>
-      </TestDiv>
+      </OrderInfoContainer>
     </Container>
   );
 };
@@ -70,7 +70,6 @@ export default BasketCheckout;
 const Container = styled.section`
   padding: 2rem;
   width: 40%;
-  /* border: 1px solid black; */
   height: 700px;
   user-select: none;
   display: flex;
@@ -106,14 +105,11 @@ const Headings = styled.div`
   }
 `;
 
-/////// rename this
 const PurchasesContainer = styled.div`
   height: 80%;
-  /* border: 1px solid red; */
   overflow-y: scroll;
 
   &::-webkit-scrollbar-track {
-    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); */
     background-color: #f5f5f5;
   }
 
@@ -140,7 +136,6 @@ const Heading = styled.p`
 `;
 
 const PurchaseWrapper = styled.div`
-  /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
   padding: 1rem 1.5rem;
@@ -195,20 +190,14 @@ const PurchasePrice = styled.p`
   }
 `;
 
-/////////////////////////////////////////////////////// rename this
-const TestDiv = styled.div`
-  /* border: 1px solid grey; */
+const OrderInfoContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
 const BasketTotalContainer = styled.div`
-  /* border: 1px solid grey; */
-  /* align-self: flex-end;
-  justify-self: flex-end; */
   width: 40%;
   display: flex;
-  /* margin-top: 2rem; */
   height: 25%;
   padding: 0.3rem;
 
@@ -220,7 +209,6 @@ const BasketTotalContainer = styled.div`
 const BasketTotalWrapper = styled.div`
   height: 100%;
   width: 100%;
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
@@ -253,7 +241,6 @@ const BasketTotalAmount = styled.div`
 `;
 
 const OrderNumberContainer = styled.div`
-  /* border: 1px solid black; */
   align-self: center;
 
   p {

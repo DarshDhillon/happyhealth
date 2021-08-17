@@ -20,7 +20,6 @@ const VideoModal = ({ children }) => {
     >
       <CloseIcon onClick={() => setShowModal(false)} />
       <VideoControls />
-
       {children}
     </ModalContainer>,
     ROOT

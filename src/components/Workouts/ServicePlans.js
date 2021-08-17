@@ -81,7 +81,6 @@ const ServicePlans = () => {
 export default ServicePlans;
 
 const PricingSection = styled.div`
-  /* border: 1px solid black; */
   margin-top: 8rem;
   padding: 3rem 0;
   display: flex;
@@ -90,13 +89,11 @@ const PricingSection = styled.div`
 `;
 
 const PricingWrapper = styled.div`
-  /* border: 1px solid red; */
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin: 0 auto; */
   @media screen and (max-width: 1200px) {
     margin: 0 2rem;
     flex-direction: column;
@@ -116,7 +113,6 @@ const PricingHeading = styled.h1`
 `;
 
 const PricingContainer = styled.div`
-  /* border: 1px solid blue; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,8 +126,6 @@ const PricingContainer = styled.div`
 `;
 
 const PricingCard = styled(Link)`
-  /* border: 1px solid red; */
-  /* background: #f8f8ff; */
   background: #f8f8ff;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 6px 20px rgba(56, 125, 255, 0.2);
@@ -179,14 +173,12 @@ const PricingCardInfo = styled.div`
 
 const PricingCardIcon = styled.div`
   margin: 1.5rem 0;
-  /* color: var(--mainBlue); */
 `;
 
 const PricingCardPlan = styled.h3`
   margin-bottom: 5px;
   font-size: ${({ main }) => (main ? '2.5rem' : '2.3rem')};
   color: var(--mainBlue);
-  /* color: ${({ main }) => (main ? 'var(--mainPurple)' : '#000')}; */
   font-style: ${({ main }) => (main ? 'italic' : 'normal')};
 `;
 

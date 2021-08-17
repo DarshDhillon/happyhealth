@@ -33,14 +33,11 @@ const HomeSections = () => {
 export default HomeSections;
 
 const SectionContainer = styled.section`
-  /* border: 1px solid red; */
   background-color: ${({ reverse }) => (reverse ? '#e8f2f7' : '#f0e9f3')};
-  /* display: flex; */
   padding: 2rem;
 `;
 
 const SectionWrapper = styled.div`
-  /* border: 1px solid black; */
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -58,7 +55,6 @@ const SectionWrapper = styled.div`
 `;
 
 const SectionDescription = styled.div`
-  /* border: 1px solid blue; */
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -110,7 +106,6 @@ const SectionDescription = styled.div`
 `;
 
 const SectionImage = styled.img`
-  /* border: 1px solid black; */
   height: 350px;
   width: 350px;
 

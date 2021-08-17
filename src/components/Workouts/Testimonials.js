@@ -37,11 +37,9 @@ const ScrollContainer = styled.div`
 `;
 
 const InnerDiv = styled.div`
-  /* border: 1px solid red; */
   cursor: col-resize;
   width: 50vw;
   height: 100%;
-  /* background-color: pink; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,10 +54,10 @@ const InnerDiv = styled.div`
 `;
 
 const TestimonialCard = styled.div`
-  /* border: 1px solid black; */
+  border-radius: 1rem;
   background-color: var(--mainBlue);
   height: 100%;
-  width: 65%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -69,8 +67,8 @@ const TestimonialCard = styled.div`
 const TestimonialTextWrapper = styled.div`
   font-size: 1.5rem;
   text-align: center;
-  padding: 0 2rem;
-  width: 80%;
+  padding: 0 1rem;
+  width: 90%;
 `;
 
 const TestimonialText = styled.p`
@@ -95,7 +93,6 @@ const CharImg = styled.img`
 `;
 
 const CharName = styled.p`
-  /* color: var(--mainPurple); */
   font-size: 1.2rem;
   font-weight: bold;
 `;

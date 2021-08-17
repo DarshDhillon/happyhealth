@@ -75,7 +75,6 @@ const BasketQuantity = styled.p`
 `;
 
 const HoverBasket = styled.div`
-  /* border: 1px solid red; */
   height: 100%;
   width: 100%;
   padding: 1rem;
@@ -83,7 +82,6 @@ const HoverBasket = styled.div`
 `;
 
 const BasketContainer = styled.div`
-  /* border: 1px solid black; */
   opacity: ${({ basketItems }) => (basketItems.length > 0 ? '1' : '0')};
   visibility: ${({ basketItems }) =>
     basketItems.length > 0 ? 'visible' : 'hidden'};
@@ -130,7 +128,6 @@ const BasketContainer = styled.div`
 `;
 
 const ItemsWrapper = styled.div`
-  /* border: 1px solid black; */
   margin: 0.8rem auto;
   display: flex;
   align-items: center;
@@ -156,10 +153,7 @@ const ItemProductName = styled.p`
   }
 `;
 
-const ButtonWrapper = styled.div`
-  /* border: 1px solid red; */
-  /* justify-self: flex-end; */
-`;
+const ButtonWrapper = styled.div``;
 
 const ItemProductQuantity = styled.p`
   font-size: 1.4rem;
@@ -192,8 +186,6 @@ const BasketTotalAmount = styled.p`
 
 const CheckoutButton = styled.button`
   padding: 0.5rem 1rem;
-  /* height: 40px; */
-  /* width: 100px; */
   background-color: var(--mainPurple);
   border-radius: 0.5rem;
   text-decoration: none;

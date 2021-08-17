@@ -49,10 +49,8 @@ const Main = () => {
 export default Main;
 
 const Container = styled(motion.main)`
-  /* height: 100vh; */
   background: linear-gradient(#e8f2f7, #f0e9f3);
   padding: 4rem 0;
-  /* border: 1px solid red; */
 `;
 
 const TextWrapper = styled.div`
@@ -108,7 +106,6 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* border: 1px solid black; */
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -117,8 +114,6 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  /* border: 1px solid black; */
-
   width: 300px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;

@@ -43,13 +43,11 @@ const Main = () => {
 export default Main;
 
 const Container = styled.div`
-  /* border: 1px solid black; */
   height: 80vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  /* padding: 4rem 2rem; */
 `;
 
 const Heading = styled.h1`
@@ -72,7 +70,6 @@ const Heading = styled.h1`
 `;
 
 const ContactInfoWrapper = styled.div`
-  /* border: 1px solid red; */
   min-width: 50%;
   height: 150px;
   display: flex;
@@ -112,16 +109,13 @@ const ContactImage = styled.img`
 `;
 
 const AddressWrapper = styled.div`
-  /* border: 1px solid blue; */
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-evenly;
-  /* flex-direction: column; */
 `;
 
 const ContactWrapper = styled.div`
-  /* border: 1px solid green; */
   width: 100%;
   align-items: center;
 

@@ -81,7 +81,6 @@ export default Footer;
 const FooterContainer = styled.footer`
   position: relative;
   min-height: 250px;
-  /* background-color: lightpink; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,7 +92,6 @@ const FooterWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
-  /* border: 1px solid red; */
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -145,7 +143,6 @@ const SocialWrapper = styled.div`
   width: 30%;
   padding: 1rem;
   margin-top: 1rem;
-  /* border: 1px solid black; */
 
   @media screen and (max-width: 768px) {
     width: 70%;

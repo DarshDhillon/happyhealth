@@ -28,7 +28,6 @@ const Banner = styled.img`
 `;
 
 const TextWrapper = styled.div`
-  /* border: 1px solid red; */
   text-align: center;
   padding: 2rem 0;
   width: 60%;

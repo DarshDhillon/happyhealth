@@ -19,19 +19,13 @@ export default Contact;
 
 const Container = styled.div`
   background: linear-gradient(#e8f2f7, #f0e9f3);
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* justify-content: space-around; */
-  /* align-items: center; */
   padding: 1rem;
 `;
 
 const Wrapper = styled.div`
-  /* border: 1px solid red; */
   display: flex;
   width: 100%;
   justify-content: space-evenly;
   padding: 2rem 0;
   flex-wrap: wrap;
-  /* margin: 0 auto; */
 `;

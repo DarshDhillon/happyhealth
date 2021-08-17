@@ -53,9 +53,7 @@ const SearchInput = () => {
 export default SearchInput;
 
 const Container = styled.div`
-  /* border: 1px solid red; */
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   padding-top: 3rem;
   max-width: 80%;
@@ -67,12 +65,7 @@ const FormWrapper = styled.div`
 `;
 
 const Form = styled.form`
-  /* border: 1px solid black; */
   width: 50%;
-
-  /* @media screen and (max-width: 1100px) {
-    width: 60%;
-  } */
 
   @media screen and (max-width: 1100px) {
     width: 80%;

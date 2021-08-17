@@ -17,7 +17,6 @@ const Hero = () => {
 export default Hero;
 
 const BannerWrapper = styled.div`
-  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
 `;
@@ -29,8 +28,6 @@ const Banner = styled.img`
 
 const TextWrapper = styled.div`
   text-align: center;
-
-  /* border: 1px solid red; */
   padding: 3rem 0;
   width: 60%;
   display: flex;

@@ -43,11 +43,9 @@ export default FoodieMain;
 const Container = styled(motion.main)`
   background: linear-gradient(#e8f2f7, #f0e9f3);
   padding: 4rem 0;
-  /* border: 1px solid red; */
 `;
 
 const TextWrapper = styled.div`
-  /* border: 1px solid red; */
   width: 60%;
   display: flex;
   flex-direction: column;

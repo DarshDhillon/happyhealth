@@ -60,7 +60,6 @@ const Sections = () => {
 export default Sections;
 
 const Section = styled.section`
-  /* border: 1px solid black; */
   display: flex;
   flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
   justify-content: space-around;
@@ -75,8 +74,6 @@ const Section = styled.section`
 `;
 
 const TextWrapper = styled.div`
-  /* border: 1px solid red; */
-  /* align-self: flex-start; */
   width: 30%;
 
   @media screen and (max-width: 1100px) {
@@ -91,7 +88,6 @@ const Caption = styled(motion.h2)`
 `;
 
 const ImageWrapper = styled.div`
-  /* border: 1px solid blue; */
   display: flex;
   justify-content: center;
   width: 50%;

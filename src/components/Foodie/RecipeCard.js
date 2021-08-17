@@ -33,7 +33,6 @@ const Recipecard = ({ item }) => {
 export default Recipecard;
 
 const Card = styled.div`
-  /* border: 1px solid red; */
   padding: 1rem;
   display: flex;
   justify-content: center;
@@ -71,7 +70,6 @@ const Card = styled.div`
 `;
 
 const Front = styled.div`
-  /* border: 1px solid red; */
   transform: rotateY(0deg);
   display: flex;
   padding: 0.1rem;
@@ -116,10 +114,8 @@ const IngredientsContainer = styled.div`
   width: 100%;
   padding: 0 2rem;
   overflow-y: scroll;
-  /* border: 1px solid blue; */
 
   &::-webkit-scrollbar-track {
-    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); */
     background-color: #f5f5f5;
   }
 

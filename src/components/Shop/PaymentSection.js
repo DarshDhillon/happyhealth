@@ -147,13 +147,10 @@ const PaymentSection = () => {
 export default PaymentSection;
 
 const Main = styled.div`
-  /* border: 1px solid red; */
   height: 700px;
   width: 40%;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  /* align-items: center; */
   padding: 2rem 0;
   background-color: #f8f8ff;
   border-radius: 0 1rem 1rem 0;
@@ -169,13 +166,11 @@ const Main = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    /* height: 800px; */
     min-width: 90%;
   }
 `;
 
 const PaymentForm = styled.form`
-  /* border: 1px solid black; */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -209,9 +204,7 @@ const Input = styled.input``;
 const TextArea = styled.textarea``;
 
 const PersonalInfo = styled.div`
-  /* border: 1px solid red; */
   width: 60%;
-  /* padding: 2rem; */
   height: 40%;
   display: flex;
   flex-direction: column;
@@ -219,7 +212,6 @@ const PersonalInfo = styled.div`
 
   input {
     margin-left: 0.8rem;
-    /* line-height: 1.5rem; */
     font-size: 1.2rem;
   }
 
@@ -227,7 +219,6 @@ const PersonalInfo = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin: 0 auto; */
   }
 
   textarea {
@@ -244,7 +235,6 @@ const PersonalInfo = styled.div`
 const PersonalInfoWrapper = styled.div``;
 
 const PaymentInfo = styled.div`
-  /* border: 1px solid black; */
   width: 80%;
   padding: 1rem 2rem;
   display: flex;
@@ -259,12 +249,10 @@ const PaymentInfo = styled.div`
 `;
 
 const CardNumberWrapper = styled.div`
-  /* border: 1px solid black; */
   display: flex;
   width: 80%;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-between; */
   position: relative;
 
   span {
@@ -301,7 +289,6 @@ const TestDiv3 = styled.div`
 
   select {
     &::-webkit-scrollbar-track {
-      /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); */
       background-color: #f5f5f5;
     }
 
@@ -325,7 +312,6 @@ const BuyButton = styled.button`
   font-size: 1.5rem;
   background-color: var(--mainPurple);
   color: #fff;
-  /* border-radius: 0.5rem; */
   border: none;
   font-weight: bold;
   cursor: pointer;

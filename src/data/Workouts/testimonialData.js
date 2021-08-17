@@ -10,7 +10,7 @@ const testimonialData = [
     id: uuid(),
     testimonialPerson: 'Lucille, 64',
     testimonialText:
-      '" Since signing up for the Elite package my drinking habit has gotten much better! "',
+      '" Since signing up for the Elite membership my drinking habit has gotten much better! "',
     testimonialImage: LucilleImg,
   },
   {

@@ -26,7 +26,6 @@ const Workouts = () => {
 export default Workouts;
 
 const Container = styled(motion.main)`
-  /* border: 1px solid red; */
   padding-bottom: 2rem;
   background: linear-gradient(#e8f2f7, #f0e9f3);
 `;

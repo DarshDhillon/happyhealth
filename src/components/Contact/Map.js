@@ -19,11 +19,7 @@ const Map = () => {
           height='100%'
           onViewportChange={(viewport) => setViewport(viewport)}
           mapStyle='mapbox://styles/mapbox/streets-v11'
-        >
-          {/* <Marker latitude='51.5549' longitude='-0.1084'>
-          <p>happyhealth</p>
-        </Marker> */}
-        </ReactMapGL>
+        ></ReactMapGL>
       </MapWrapper>
     </MapContainer>
   );
@@ -34,17 +30,9 @@ export default Map;
 const MapContainer = styled.div`
   display: flex;
   margin: 1rem;
-
-  /* justify-content: center; */
-  /* align-items: center; */
-
-  /* height: 800px; */
-  /* margin: 0 auto; */
-  /* border: 1px solid black; */
 `;
 
 const MapWrapper = styled.div`
-  /* border: 1px solid grey; */
   height: 400px;
   width: 600px;
   border-radius: 0.2rem;

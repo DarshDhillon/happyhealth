@@ -35,7 +35,6 @@ const RecipeImageContainer = styled.div`
   padding: 3rem 0;
   margin: 2rem auto;
   width: 70%;
-  /* border: 1px solid black; */
   position: relative;
 
   small {
