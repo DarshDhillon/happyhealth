@@ -168,11 +168,13 @@ const ItemProductTotal = styled.p`
 const BasketButtonRemove = styled(MdRemoveCircleOutline)`
   font-size: 1.8rem;
   color: #e94747;
+  z-index: 999;
 `;
 
 const BasketButtonAdd = styled(MdAddCircleOutline)`
   font-size: 1.8rem;
   color: #8eff8e;
+  z-index: 999;
 `;
 
 const BasketTotalAmount = styled.p`

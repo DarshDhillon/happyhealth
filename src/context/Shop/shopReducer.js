@@ -19,7 +19,7 @@ const shopReducer = (state, { type, payload }) => {
         items: [
           ...state.items.map((item) => {
             if (item.id === payload.id) {
-              return { ...item, quantity: item.quantity++ };
+              return { ...item, quantity: item.quantity + 1 };
             }
             return item;
           }),
@@ -27,7 +27,7 @@ const shopReducer = (state, { type, payload }) => {
       };
 
     case 'REMOVE_ONE_ITEM':
-      if (payload.quantity === 0) {
+      if (payload.quantity === 1) {
         return {
           ...state,
           items: [...state.items.filter((item) => item.id !== payload.id)],
@@ -39,7 +39,7 @@ const shopReducer = (state, { type, payload }) => {
         items: [
           ...state.items.map((item) => {
             if (item.id === payload.id) {
-              return { ...item, quantity: item.quantity-- };
+              return { ...item, quantity: item.quantity - 1 };
             }
             return item;
           }),

@@ -28,7 +28,7 @@ const testimonialData = [
   {
     id: uuid(),
     testimonialPerson: 'Lindsay, 39',
-    testimonialText: `" Being healthy again has driven me to do great things, like shopping and getting my hair done "`,
+    testimonialText: `" Being healthy again's driven me to do great things, like shopping and getting my hair done "`,
     testimonialImage: LindsayImg,
   },
   {

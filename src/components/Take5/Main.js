@@ -30,16 +30,16 @@ const Main = () => {
       </TextWrapper>
       <ImageContainer>
         <Image
-          name='beach'
+          name='beach1'
           onClick={handleChooseVideo}
           src={BeachImage}
-          alt='beach'
+          alt='beach1'
         />
         <Image
-          name='rain'
+          name='rain1'
           onClick={handleChooseVideo}
           src={RainImage}
-          alt='rain'
+          alt='rain1'
         />
       </ImageContainer>
     </Container>

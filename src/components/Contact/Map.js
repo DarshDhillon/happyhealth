@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import ReactMapGL from 'react-map-gl';
+import mapboxgl from 'mapbox-gl';
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 const Map = () => {
   const [viewport, setViewport] = useState({

@@ -75,11 +75,13 @@ const SectionDescription = styled.div`
     font-weight: 700;
     margin-bottom: 1rem;
     text-align: center;
+    color: #000;
   }
 
   p {
     font-size: 1.5rem;
     font-weight: 400;
+    color: #000;
 
     @media screen and (max-width: 768px) {
       font-size: 1rem;

@@ -11,7 +11,7 @@ const ModalVideoProvider = ({ children }) => {
 
   const handleVideoToggle = () => {
     setChosenVideo((prev) => {
-      const video = prev.name === 'rain' ? 'beach' : 'rain';
+      const video = prev.name === 'rain1' ? 'beach1' : 'rain1';
 
       return {
         name: video,

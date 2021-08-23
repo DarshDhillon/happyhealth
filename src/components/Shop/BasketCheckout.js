@@ -31,8 +31,8 @@ const BasketCheckout = ({ basketItems }) => {
             <PurchaseImage src={item.img} />
             <PurchaseName>{item.productName}</PurchaseName>
             <PurchaseQuantity>
-              <span onClick={() => handleAddOneItem(item)}>+</span>{' '}
-              {item.quantity}{' '}
+              <span onClick={() => handleAddOneItem(item)}>+</span>
+              {item.quantity}
               <span onClick={() => handleRemoveOneItem(item)}>-</span>
             </PurchaseQuantity>
             <PurchasePrice>£{item.price * item.quantity}</PurchasePrice>
@@ -178,12 +178,10 @@ const PurchaseQuantity = styled.p`
   }
 
   span {
+    z-index: 999;
+    margin: 0 0.3rem;
     opacity: 0.4;
     cursor: pointer;
-
-    &:hover {
-      transform: scale(1.8);
-    }
   }
 `;
 
